@@ -1,0 +1,76 @@
+============================================================
+ phpMyAdmin Quick Guide — GeneralLink
+============================================================
+
+HOW TO OPEN IT
+--------------
+Double-click "Open_phpMyAdmin.bat" (same folder as this file),
+or manually go to: http://localhost/phpmyadmin
+(XAMPP's Apache + MySQL must both be running first.)
+
+
+HOW TO SEE A TABLE'S DATA (e.g. sales_transactions, notifications, agents)
+---------------------------------------------------------------------------
+1. Click "generallink" in the left sidebar (your database).
+2. Click the table name in the left sidebar list (e.g. "notifications").
+3. Click the "Browse" tab along the top. This shows the actual rows.
+   - "Structure" tab shows the column NAMES only, not the data — easy
+     to click by mistake, but it won't show you real records.
+
+
+HOW TO RUN A SQL SEARCH / QUERY
+--------------------------------
+1. Click "generallink" in the left sidebar.
+2. Click the "SQL" tab along the top (NOT Command Prompt — this only
+   works typed into this box on the phpMyAdmin webpage).
+3. Click inside the big text box and paste/type your query.
+4. Click the "Go" button (bottom-right of the box).
+5. Results appear as a table right there on the page.
+
+Some queries you'll likely use for GeneralLink testing:
+
+-- See the newest notifications first
+SELECT recipient_agent_id, type, title, message, created_at
+FROM notifications
+ORDER BY created_at DESC
+LIMIT 20;
+
+-- See the newest sales transactions
+SELECT policy_id, document_reference_number, premium_amount, status,
+       flagged_for_review, agent_id, created_at
+FROM sales_transactions
+ORDER BY created_at DESC
+LIMIT 20;
+
+-- See if a customer was created (e.g. search by name)
+SELECT customer_id, full_name, phone, address, postcode, city, state,
+       owned_by_agent_id, created_at
+FROM customers
+WHERE full_name LIKE '%vasudavan%'
+ORDER BY created_at DESC;
+
+-- See earning income (commission) for a specific policy
+SELECT agent_id, role_at_transaction, commission_amount, status
+FROM commission_transactions
+WHERE policy_id = 'PASTE-THE-POLICY-ID-HERE';
+
+-- Find an agent's login email + role + who recruited them
+SELECT agent_id, full_name, email, role, parent_id, hierarchy_path
+FROM agents
+WHERE full_name LIKE '%murali%';
+
+
+HOW TO EXPORT A TABLE (backup / share with someone)
+----------------------------------------------------
+1. Click the table name in the sidebar.
+2. Click the "Export" tab.
+3. Leave the default options and click "Go" — a .sql file downloads.
+
+
+A FEW THINGS TO BE CAREFUL ABOUT
+---------------------------------
+- Never run DELETE or UPDATE queries unless you're 100% sure what
+  they'll change — there's no "undo" button in phpMyAdmin.
+- If a query gives an error mentioning "Unknown column", it usually
+  means that column doesn't exist (or was renamed/removed) — check the
+  "Structure" tab of that table to see the real column names.

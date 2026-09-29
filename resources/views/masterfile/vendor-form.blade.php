@@ -1,0 +1,149 @@
+<div style="display:grid; grid-template-columns:repeat(4,1fr); gap:6px;">
+
+    <div>
+        <label style="display:block; font-size:10px; font-weight:600; color:#374151; margin-bottom:2px;">Vendor Name</label>
+        <input type="text" name="vendor_name" value="{{ request('vendor_name', $vendor->vendor_name ?? '') }}" placeholder="e.g. Allianz Malaysia" style="width:100%; border:1px solid #d1d5db; border-radius:5px; padding:5px 8px; font-size:11px; outline:none; box-sizing:border-box;">
+    </div>
+
+    <div>
+        <label style="display:block; font-size:10px; font-weight:600; color:#374151; margin-bottom:2px;">Vendor Code @if($vendor)<span style="color:#9ca3af; font-weight:400;">(fixed)</span>@endif</label>
+        <input type="text" name="vendor_code" value="{{ request('vendor_code', $vendor->vendor_code ?? '') }}" {{ $vendor ? 'readonly' : '' }} placeholder="e.g. ALZ" style="width:100%; border:1px solid #d1d5db; border-radius:5px; padding:5px 8px; font-size:11px; outline:none; box-sizing:border-box; text-transform:uppercase; {{ $vendor ? 'background:#f9fafb;' : '' }}">
+    </div>
+
+    <div>
+        <label style="display:block; font-size:10px; font-weight:600; color:#374151; margin-bottom:2px;">Office Phone</label>
+        <input type="text" name="vendor_office_phone" value="{{ request('vendor_office_phone', $vendor->vendor_office_phone ?? '') }}" placeholder="+603-XXXX XXXX" style="width:100%; border:1px solid #d1d5db; border-radius:5px; padding:5px 8px; font-size:11px; outline:none; box-sizing:border-box;">
+    </div>
+
+    <div>
+        <label style="display:block; font-size:10px; font-weight:600; color:#374151; margin-bottom:2px;">Email</label>
+        <input type="email" name="vendor_email" value="{{ request('vendor_email', $vendor->vendor_email ?? '') }}" placeholder="vendor@example.com" style="width:100%; border:1px solid #d1d5db; border-radius:5px; padding:5px 8px; font-size:11px; outline:none; box-sizing:border-box;">
+    </div>
+
+    <div style="grid-column:span 2;">
+        <label style="display:block; font-size:10px; font-weight:600; color:#374151; margin-bottom:2px;">Website</label>
+        <input type="text" name="vendor_website" value="{{ request('vendor_website', $vendor->vendor_website ?? '') }}" placeholder="https://www.example.com" style="width:100%; border:1px solid #d1d5db; border-radius:5px; padding:5px 8px; font-size:11px; outline:none; box-sizing:border-box;">
+    </div>
+
+    <div>
+        <label style="display:block; font-size:10px; font-weight:600; color:#374151; margin-bottom:2px;">PIC Name</label>
+        <input type="text" name="pic_name" value="{{ request('pic_name', $vendor->pic_name ?? '') }}" placeholder="Person in charge" style="width:100%; border:1px solid #d1d5db; border-radius:5px; padding:5px 8px; font-size:11px; outline:none; box-sizing:border-box;">
+    </div>
+
+    <div>
+        <label style="display:block; font-size:10px; font-weight:600; color:#374151; margin-bottom:2px;">PIC Phone</label>
+        <input type="text" name="pic_phone" value="{{ request('pic_phone', $vendor->pic_phone ?? '') }}" placeholder="+601X-XXXX XXXX" style="width:100%; border:1px solid #d1d5db; border-radius:5px; padding:5px 8px; font-size:11px; outline:none; box-sizing:border-box;">
+    </div>
+
+    <div style="grid-column:span 2;">
+        <label style="display:block; font-size:10px; font-weight:600; color:#374151; margin-bottom:2px;">Address</label>
+        <input type="text" name="vendor_address" value="{{ request('vendor_address', $vendor->vendor_address ?? '') }}" placeholder="Street address" style="width:100%; border:1px solid #d1d5db; border-radius:5px; padding:5px 8px; font-size:11px; outline:none; box-sizing:border-box;">
+    </div>
+
+    <div style="position:relative;">
+        <label style="display:block; font-size:10px; font-weight:600; color:#374151; margin-bottom:2px;">Postcode</label>
+        <input type="text" name="vendor_postcode" id="gl_vendor_postcode" value="{{ request('vendor_postcode', $vendor->vendor_postcode ?? '') }}" placeholder="e.g. 41050" maxlength="5" autocomplete="off" oninput="glPC(this)" style="width:100%; border:1px solid #d1d5db; border-radius:5px; padding:5px 8px; font-size:11px; outline:none; box-sizing:border-box;">
+        <div id="gl_pc_dd" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid #d1d5db;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.15);z-index:9999;max-height:180px;overflow-y:auto;"></div>
+    </div>
+
+    <div style="position:relative;">
+        <label style="display:block; font-size:10px; font-weight:600; color:#374151; margin-bottom:2px;">City</label>
+        <input type="text" name="vendor_city" id="gl_vendor_city" value="{{ request('vendor_city', $vendor->vendor_city ?? '') }}" placeholder="Type or auto-fill" autocomplete="off" oninput="glCity(this)" style="width:100%; border:1px solid #d1d5db; border-radius:5px; padding:5px 8px; font-size:11px; outline:none; box-sizing:border-box;">
+        <div id="gl_city_dd" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid #d1d5db;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.15);z-index:9999;max-height:180px;overflow-y:auto;"></div>
+    </div>
+
+    <div>
+        <label style="display:block; font-size:10px; font-weight:600; color:#374151; margin-bottom:2px;">State</label>
+        <select name="vendor_state" id="gl_vendor_state" style="width:100%; border:1px solid #d1d5db; border-radius:5px; padding:5px 8px; font-size:11px; outline:none; box-sizing:border-box; background:#fff;">
+            <option value="">— Select State —</option>
+            @foreach($states as $state)
+            <option value="{{ $state }}" {{ request('vendor_state', $vendor->vendor_state ?? '') === $state ? 'selected' : '' }}>{{ $state }}</option>
+            @endforeach
+        </select>
+    </div>
+
+    @if($showStatus)
+    <div>
+        <label style="display:block; font-size:10px; font-weight:600; color:#374151; margin-bottom:2px;">Status</label>
+        <select name="is_active" style="width:100%; border:1px solid #d1d5db; border-radius:5px; padding:5px 8px; font-size:11px; outline:none; box-sizing:border-box; background:#fff;">
+            <option value="1" {{ ($vendor->is_active ?? 1) == 1 ? 'selected' : '' }}>Active</option>
+            <option value="0" {{ ($vendor->is_active ?? 1) == 0 ? 'selected' : '' }}>Inactive ⚠</option>
+        </select>
+        <div style="font-size:9px; color:#dc2626; margin-top:1px;">⚠ Inactive deactivates all branches</div>
+    </div>
+    @endif
+
+    <div style="grid-column:1/-1; margin-top:4px;">
+        <button type="submit" style="background:#1565C0; color:#fff; border:none; border-radius:6px; padding:8px 28px; font-size:12px; font-weight:600; cursor:pointer;">{{ $submitLabel }}</button>
+    </div>
+
+</div>
+
+<script>
+var _glPCt, _glCTt;
+function glPC(inp) {
+    clearTimeout(_glPCt);
+    var v=inp.value.trim(), dd=document.getElementById('gl_pc_dd');
+    if(v.length<3){dd.style.display='none';return;}
+    _glPCt=setTimeout(function(){
+        fetch('/admin/postcode-lookup?postcode='+encodeURIComponent(v)+'&partial=1')
+        .then(function(r){return r.json();}).then(function(data){
+            if(!data||!data.length){dd.style.display='none';return;}
+            dd.innerHTML='';
+            data.forEach(function(item){
+                var d=document.createElement('div');
+                d.style.cssText='padding:7px 12px;cursor:pointer;font-size:12px;border-bottom:1px solid #f3f4f6;white-space:nowrap;';
+                d.innerHTML='<strong>'+item.postcode+'</strong> — '+item.city+' <span style="color:#6b7280;">('+item.state+')</span>';
+                d.onmouseover=function(){this.style.background='#f0f9ff';};
+                d.onmouseout=function(){this.style.background='';};
+                d.onmousedown=function(e){
+                    e.preventDefault();
+                    document.getElementById('gl_vendor_postcode').value=item.postcode;
+                    document.getElementById('gl_vendor_city').value=item.city;
+                    var s=document.getElementById('gl_vendor_state');
+                    if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].value===item.state){s.selectedIndex=i;break;}}}
+                    dd.style.display='none';
+                };
+                dd.appendChild(d);
+            });
+            dd.style.display='block';
+        }).catch(function(){dd.style.display='none';});
+    },300);
+}
+function glCity(inp) {
+    clearTimeout(_glCTt);
+    var v=inp.value.trim(), dd=document.getElementById('gl_city_dd');
+    if(v.length<2){dd.style.display='none';return;}
+    _glCTt=setTimeout(function(){
+        fetch('/admin/postcode-lookup?city='+encodeURIComponent(v))
+        .then(function(r){return r.json();}).then(function(data){
+            if(!data||!data.length){dd.style.display='none';return;}
+            dd.innerHTML='';
+            var seen={};
+            data.forEach(function(item){
+                if(seen[item.city])return; seen[item.city]=true;
+                var d=document.createElement('div');
+                d.style.cssText='padding:7px 12px;cursor:pointer;font-size:12px;border-bottom:1px solid #f3f4f6;white-space:nowrap;';
+                d.innerHTML=item.city+' <span style="color:#6b7280;">('+item.state+')</span>';
+                d.onmouseover=function(){this.style.background='#f0f9ff';};
+                d.onmouseout=function(){this.style.background='';};
+                d.onmousedown=function(e){
+                    e.preventDefault();
+                    document.getElementById('gl_vendor_city').value=item.city;
+                    var s=document.getElementById('gl_vendor_state');
+                    if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].value===item.state){s.selectedIndex=i;break;}}}
+                    dd.style.display='none';
+                };
+                dd.appendChild(d);
+            });
+            dd.style.display='block';
+        }).catch(function(){dd.style.display='none';});
+    },300);
+}
+document.addEventListener('click',function(){
+    var a=document.getElementById('gl_pc_dd');
+    var b=document.getElementById('gl_city_dd');
+    if(a)a.style.display='none';
+    if(b)b.style.display='none';
+});
+</script>

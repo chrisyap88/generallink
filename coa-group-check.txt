@@ -1,0 +1,10 @@
+NULL | NULL | 13
+47159e62-7056-4ede-be21-074315c7be30 | NULL | 236
+7ad62e88-be14-4069-97f9-01ab2cf120d0 | NULL | 4
+e3851037-933a-46f2-83d2-4c99d88bbdca | NULL | 13
+LABEL: 2f875606-f0be-4792-b3d6-e1362c4878d3 = rela2u
+LABEL: 47159e62-7056-4ede-be21-074315c7be30 = 马来西亚道教总会
+LABEL: 7ad62e88-be14-4069-97f9-01ab2cf120d0 = Rotary Club Uptown
+LABEL: 823dc11c-bdda-46ad-b006-c20aff108d24 = PVATM
+LABEL: cf5e2955-8fa0-47ea-803f-2b0e9871e900 = My Way
+LABEL: e3851037-933a-46f2-83d2-4c99d88bbdca = Persekutuan Pertubuhan Agama Tao Malaysia

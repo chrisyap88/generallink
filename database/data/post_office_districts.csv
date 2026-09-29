@@ -1,0 +1,445 @@
+state,post_office,district
+Johor,Ayer Baloi,Pontian
+Johor,Ayer Hitam,Batu Pahat
+Johor,Ayer Tawar 2,Kota Tinggi
+Johor,Bandar Penawar,Kota Tinggi
+Johor,Bandar Tenggara,Kota Tinggi
+Johor,Batu Anam,Segamat
+Johor,Batu Pahat,Batu Pahat
+Johor,Bekok,Segamat
+Johor,Benut,Pontian
+Johor,Bukit Gambir,Tangkak
+Johor,Bukit Pasir,Muar
+Johor,Chaah,Segamat
+Johor,Endau,Mersing
+Johor,Gelang Patah,Johor Bahru
+Johor,Gerisek,Muar
+Johor,Gugusan Taib Andak,Kulai
+Johor,Iskandar Puteri,Johor Bahru
+Johor,Jementah,Segamat
+Johor,Johor Bahru,Johor Bahru
+Johor,Kahang,Kluang
+Johor,Kluang,Kluang
+Johor,Kota Tinggi,Kota Tinggi
+Johor,Kukup,Pontian
+Johor,Kulai,Kulai
+Johor,Labis,Segamat
+Johor,Layang-Layang,Kluang
+Johor,Masai,Johor Bahru
+Johor,Mersing,Mersing
+Johor,Muar,Muar
+Johor,Pagoh,Muar
+Johor,Paloh,Kluang
+Johor,Panchor,Muar
+Johor,Parit Jawa,Muar
+Johor,Parit Raja,Batu Pahat
+Johor,Parit Sulong,Batu Pahat
+Johor,Pasir Gudang,Johor Bahru
+Johor,Pekan Nenas,Pontian
+Johor,Pengerang,Kota Tinggi
+Johor,Pontian,Pontian
+Johor,Pulau Satu,Johor Bahru
+Johor,Rengam,Kluang
+Johor,Rengit,Batu Pahat
+Johor,Segamat,Segamat
+Johor,Semerah,Batu Pahat
+Johor,Senai,Kulai
+Johor,Senggarang,Batu Pahat
+Johor,Seri Gading,Batu Pahat
+Johor,Seri Medan,Batu Pahat
+Johor,Simpang Rengam,Kluang
+Johor,Sungai Mati,Tangkak
+Johor,Tangkak,Tangkak
+Johor,Ulu Tiram,Johor Bahru
+Johor,Yong Peng,Batu Pahat
+Kedah,Alor Setar,Kota Setar
+Kedah,Ayer Hitam,Kubang Pasu
+Kedah,Baling,Baling
+Kedah,Bandar Baharu,Bandar Baharu
+Kedah,Bedong,Kuala Muda
+Kedah,Bukit Kayu Hitam,Kubang Pasu
+Kedah,Changloon,Kubang Pasu
+Kedah,Gurun,Kuala Muda
+Kedah,Jeniang,Sik
+Kedah,Jitra,Kubang Pasu
+Kedah,Karangan,Kulim
+Kedah,Kepala Batas,Kota Setar
+Kedah,Kodiang,Kubang Pasu
+Kedah,Kota Kuala Muda,Kuala Muda
+Kedah,Kota Sarang Semut,Kota Setar
+Kedah,Kuala Kedah,Kota Setar
+Kedah,Kuala Ketil,Baling
+Kedah,Kuala Nerang,Padang Terap
+Kedah,Kuala Pegang,Baling
+Kedah,Kulim,Kulim
+Kedah,Kupang,Baling
+Kedah,Langgar,Kota Setar
+Kedah,Langkawi,Langkawi
+Kedah,Lunas,Kulim
+Kedah,Merbok,Kuala Muda
+Kedah,Padang Serai,Kulim
+Kedah,Pendang,Pendang
+Kedah,Pokok Sena,Pokok Sena
+Kedah,Serdang,Bandar Baharu
+Kedah,Sik,Sik
+Kedah,Simpang Empat,Kota Setar
+Kedah,Sungai Petani,Kuala Muda
+Kedah,Universiti Utara Malaysia,Kubang Pasu
+Kedah,Yan,Yan
+Kelantan,Ayer Lanas,Jeli
+Kelantan,Bachok,Bachok
+Kelantan,Cherang Ruku,Pasir Puteh
+Kelantan,Dabong,Kuala Krai
+Kelantan,Gua Musang,Gua Musang
+Kelantan,Jeli,Jeli
+Kelantan,Kem Desa Pahlawan,Machang
+Kelantan,Ketereh,Kota Bharu
+Kelantan,Kota Bharu,Kota Bharu
+Kelantan,Kuala Balah,Jeli
+Kelantan,Kuala Krai,Kuala Krai
+Kelantan,Machang,Machang
+Kelantan,Melor,Kota Bharu
+Kelantan,Pasir Mas,Pasir Mas
+Kelantan,Pasir Puteh,Pasir Puteh
+Kelantan,Pulai Chondong,Machang
+Kelantan,Rantau Panjang,Pasir Mas
+Kelantan,Selising,Pasir Puteh
+Kelantan,Tanah Merah,Tanah Merah
+Kelantan,Temangan,Machang
+Kelantan,Tumpat,Tumpat
+Kelantan,Wakaf Bharu,Tumpat
+Melaka,Alor Gajah,Alor Gajah
+Melaka,Asahan,Jasin
+Melaka,Ayer Keroh,Melaka Tengah
+Melaka,Bemban,Jasin
+Melaka,Durian Tunggal,Alor Gajah
+Melaka,Jasin,Jasin
+Melaka,Kem Trendak,Melaka Tengah
+Melaka,Kuala Sungai Baru,Alor Gajah
+Melaka,Lubok China,Alor Gajah
+Melaka,Masjid Tanah,Alor Gajah
+Melaka,Melaka,Melaka Tengah
+Melaka,Merlimau,Jasin
+Melaka,Selandar,Jasin
+Melaka,Sungai Rambai,Jasin
+Melaka,Sungai Udang,Melaka Tengah
+Melaka,Tanjong Kling,Melaka Tengah
+Negeri Sembilan,Bahau,Jempol
+Negeri Sembilan,Bandar Enstek,Seremban
+Negeri Sembilan,Bandar Seri Jempol,Jempol
+Negeri Sembilan,Batu Kikir,Jempol
+Negeri Sembilan,Gemas,Tampin
+Negeri Sembilan,Gemencheh,Tampin
+Negeri Sembilan,Johol,Kuala Pilah
+Negeri Sembilan,Kota,Rembau
+Negeri Sembilan,Kuala Klawang,Jelebu
+Negeri Sembilan,Kuala Pilah,Kuala Pilah
+Negeri Sembilan,Labu,Seremban
+Negeri Sembilan,Linggi,Port Dickson
+Negeri Sembilan,Mantin,Seremban
+Negeri Sembilan,Niai,Seremban
+Negeri Sembilan,Nilai,Seremban
+Negeri Sembilan,Port Dickson,Port Dickson
+Negeri Sembilan,Pusat  Bandar Palong,Jempol
+Negeri Sembilan,Rantau,Seremban
+Negeri Sembilan,Rembau,Rembau
+Negeri Sembilan,Rompin,Jempol
+Negeri Sembilan,Seremban,Seremban
+Negeri Sembilan,Si Rusa,Port Dickson
+Negeri Sembilan,Simpang Durian,Jelebu
+Negeri Sembilan,Simpang Pertang,Jelebu
+Negeri Sembilan,Tampin,Tampin
+Negeri Sembilan,Tanjong Ipoh,Kuala Pilah
+Pahang,Balok,Kuantan
+Pahang,Bandar Bera,Bera
+Pahang,Bandar Pusat  Jengka,Maran
+Pahang,Bandar Pusat Jengka,Maran
+Pahang,Bandar Tun Abdul Razak,Rompin
+Pahang,Benta,Lipis
+Pahang,Bentong,Bentong
+Pahang,Brinchang,Cameron Highlands
+Pahang,Bukit Fraser,Raub
+Pahang,Bukit Goh,Kuantan
+Pahang,Bukit Kuin,Kuantan
+Pahang,Chenor,Maran
+Pahang,Chini,Pekan
+Pahang,Damak,Jerantut
+Pahang,Dong,Raub
+Pahang,Gambang,Kuantan
+Pahang,Genting Highlands,Bentong
+Pahang,Jerantut,Jerantut
+Pahang,Karak,Bentong
+Pahang,Kemayan,Bera
+Pahang,Kuala Krau,Temerloh
+Pahang,Kuala Lipis,Lipis
+Pahang,Kuala Rompin,Rompin
+Pahang,Kuantan,Kuantan
+Pahang,Lanchang,Temerloh
+Pahang,Lurah Bilut,Bentong
+Pahang,Maran,Maran
+Pahang,Mentakab,Temerloh
+Pahang,Muadzam Shah,Rompin
+Pahang,Padang Tengku,Lipis
+Pahang,Pekan,Pekan
+Pahang,Raub,Raub
+Pahang,Ringlet,Cameron Highlands
+Pahang,Sega,Raub
+Pahang,Sungai Koyan,Lipis
+Pahang,Sungai Lembing,Kuantan
+Pahang,Tanah Rata,Cameron Highlands
+Pahang,Temerloh,Temerloh
+Pahang,Triang,Bera
+Perak,Ayer Tawar,Manjung
+Perak,Bagan Datoh,Bagan Datuk
+Perak,Bagan Serai,Kerian
+Perak,Bandar Seri Iskandar,Perak Tengah
+Perak,Batu Gajah,Kinta
+Perak,Batu Kurau,"Larut, Matang dan Selama"
+Perak,Behrang Stesen,Muallim
+Perak,Bidor,Batang Padang
+Perak,Bota,Perak Tengah
+Perak,Bruas,Manjung
+Perak,Changkat Jering,"Larut, Matang dan Selama"
+Perak,Changkat Keruing,Manjung
+Perak,Chemor,Kinta
+Perak,Chenderiang,Batang Padang
+Perak,Chenderong Balai,Hilir Perak
+Perak,Chikus,Hilir Perak
+Perak,Enggor,Kuala Kangsar
+Perak,Gerik,Hulu Perak
+Perak,Gopeng,Kampar
+Perak,Hutan Melintang,Bagan Datuk
+Perak,Intan,Hulu Perak
+Perak,Ipoh,Kinta
+Perak,Jeram,Kampar
+Perak,Kampar,Kampar
+Perak,Kampung Gajah,Perak Tengah
+Perak,Kampung Kepayang,Kinta
+Perak,Kamunting,"Larut, Matang dan Selama"
+Perak,Kuala Kangsar,Kuala Kangsar
+Perak,Kuala Kurau,Kerian
+Perak,Kuala Sepetang,"Larut, Matang dan Selama"
+Perak,Lambor Kanan,Perak Tengah
+Perak,Langkap,Hilir Perak
+Perak,Lenggong,Hulu Perak
+Perak,Lumut,Manjung
+Perak,Malim Nawar,Kampar
+Perak,Manong,Kuala Kangsar
+Perak,Matang,"Larut, Matang dan Selama"
+Perak,Padang Rengas,Kuala Kangsar
+Perak,Pangkor,Manjung
+Perak,Pantai Remis,Manjung
+Perak,Parit,Perak Tengah
+Perak,Parit Buntar,Kerian
+Perak,Pengkalan Hulu,Hulu Perak
+Perak,Pusing,Kinta
+Perak,Rantau Panjang,"Larut, Matang dan Selama"
+Perak,Sauk,Kuala Kangsar
+Perak,Selama,"Larut, Matang dan Selama"
+Perak,Selekoh,Bagan Datuk
+Perak,Seri Manjong,Manjung
+Perak,Seri Manjung,Manjung
+Perak,Simpang,"Larut, Matang dan Selama"
+Perak,Simpang Ampat Semanggol,Kerian
+Perak,Sitiawan,Manjung
+Perak,Slim River,Muallim
+Perak,Sungai Siput,Kuala Kangsar
+Perak,Sungai Sumun,Bagan Datuk
+Perak,Sungkai,Batang Padang
+Perak,TLDM Lumut,Manjung
+Perak,Taiping,"Larut, Matang dan Selama"
+Perak,Tanjong Malim,Muallim
+Perak,Tanjong Piandang,Kerian
+Perak,Tanjong Rambutan,Kinta
+Perak,Tanjong Tualang,Kinta
+Perak,Tapah,Batang Padang
+Perak,Tapah Road,Batang Padang
+Perak,Teluk Intan,Hilir Perak
+Perak,Temoh,Batang Padang
+Perak,Trolak,Muallim
+Perak,Trong,"Larut, Matang dan Selama"
+Perak,Tronoh,Kinta
+Perak,Ulu Bernam,Bagan Datuk
+Perak,Ulu Kinta,Kinta
+Perlis,Arau,Perlis
+Perlis,Kaki Bukit,Perlis
+Perlis,Kangar,Perlis
+Perlis,Kuala Perlis,Perlis
+Perlis,Padang Besar,Perlis
+Perlis,Simpang Ampat,Perlis
+Pulau Pinang,Ayer Itam,Timur Laut
+Pulau Pinang,Balik Pulau,Barat Daya
+Pulau Pinang,Batu Ferringhi,Timur Laut
+Pulau Pinang,Batu Maung,Barat Daya
+Pulau Pinang,Bayan Lepas,Barat Daya
+Pulau Pinang,Bukit Mertajam,Seberang Perai Tengah
+Pulau Pinang,Butterworth,Seberang Perai Utara
+Pulau Pinang,Gelugor,Timur Laut
+Pulau Pinang,Jelutong,Timur Laut
+Pulau Pinang,Kepala Batas,Seberang Perai Utara
+Pulau Pinang,Kubang Semang,Seberang Perai Tengah
+Pulau Pinang,Nibong Tebal,Seberang Perai Selatan
+Pulau Pinang,Penaga,Seberang Perai Utara
+Pulau Pinang,Penang Hill,Timur Laut
+Pulau Pinang,Perai,Seberang Perai Tengah
+Pulau Pinang,Permatang Pauh,Seberang Perai Tengah
+Pulau Pinang,Pulau Pinang,Timur Laut
+Pulau Pinang,Simpang Ampat,Seberang Perai Selatan
+Pulau Pinang,Sungai Jawi,Seberang Perai Selatan
+Pulau Pinang,Tanjong Bungah,Timur Laut
+Pulau Pinang,Tanjung Bungah,Timur Laut
+Pulau Pinang,Tasek Gelugor,Seberang Perai Utara
+Pulau Pinang,Tasek Gelugur,Seberang Perai Utara
+Pulau Pinang,USM Pulau Pinang,Timur Laut
+Sabah,Beaufort,Beaufort
+Sabah,Beluran,Beluran
+Sabah,Bongawan,Papar
+Sabah,Keningau,Keningau
+Sabah,Kota Belud,Kota Belud
+Sabah,Kota Kinabalu,Kota Kinabalu
+Sabah,Kota Kinabatangan,Kinabatangan
+Sabah,Kota Marudu,Kota Marudu
+Sabah,Kuala Penyu,Kuala Penyu
+Sabah,Kudat,Kudat
+Sabah,Kunak,Kunak
+Sabah,Lahad Datu,Lahad Datu
+Sabah,Membakut,Beaufort
+Sabah,Menumbok,Kuala Penyu
+Sabah,Nabawan,Nabawan
+Sabah,Pamol,Beluran
+Sabah,Papar,Papar
+Sabah,Penampang,Penampang
+Sabah,Ranau,Ranau
+Sabah,Sandakan,Sandakan
+Sabah,Semporna,Semporna
+Sabah,Sipitang,Sipitang
+Sabah,Tambunan,Tambunan
+Sabah,Tamparuli,Tuaran
+Sabah,Tawau,Tawau
+Sabah,Tenghilan,Tuaran
+Sabah,Tenom,Tenom
+Sabah,Tuaran,Tuaran
+Sarawak,Asajaya,Asajaya
+Sarawak,Balingian,Mukah
+Sarawak,Baram,Marudi
+Sarawak,Bau,Bau
+Sarawak,Bekenu,Subis
+Sarawak,Belaga,Belaga
+Sarawak,Belawai,Tanjung Manis
+Sarawak,Betong,Betong
+Sarawak,Bintangor,Meradong
+Sarawak,Bintulu,Bintulu
+Sarawak,Dalat,Dalat
+Sarawak,Daro,Daro
+Sarawak,Debak,Betong
+Sarawak,Engkilili,Lubok Antu
+Sarawak,Julau,Julau
+Sarawak,Kabong,Kabong
+Sarawak,Kanowit,Kanowit
+Sarawak,Kapit,Kapit
+Sarawak,Kota Samarahan,Samarahan
+Sarawak,Kuching,Kuching
+Sarawak,Lawas,Lawas
+Sarawak,Limbang,Limbang
+Sarawak,Lingga,Sri Aman
+Sarawak,Long Lama,Telang Usan
+Sarawak,Lubok Antu,Lubok Antu
+Sarawak,Lundu,Lundu
+Sarawak,Lutong,Miri
+Sarawak,Matu,Matu
+Sarawak,Miri,Miri
+Sarawak,Mukah,Mukah
+Sarawak,Nanga Medamit,Limbang
+Sarawak,Niah,Subis
+Sarawak,Pusa,Pusa
+Sarawak,Pusat Mel Miri,Miri
+Sarawak,Roban,Saratok
+Sarawak,Saratok,Saratok
+Sarawak,Sarikei,Sarikei
+Sarawak,Sebauh,Sebauh
+Sarawak,Sebuyau,Sebuyau
+Sarawak,Serian,Serian
+Sarawak,Sibu,Sibu
+Sarawak,Sibu Jaya,Sibu
+Sarawak,Siburan,Kuching
+Sarawak,Simunjan,Simunjan
+Sarawak,Song,Song
+Sarawak,Spaoh,Betong
+Sarawak,Sri Aman,Sri Aman
+Sarawak,Sundar,Lawas
+Sarawak,Tatau,Tatau
+Selangor,Ampang,Hulu Langat
+Selangor,Bandar Baru Bangi,Hulu Langat
+Selangor,Bandar Puncak Alam,Kuala Selangor
+Selangor,Banting,Kuala Langat
+Selangor,Batang Kali,Hulu Selangor
+Selangor,Batu Arang,Gombak
+Selangor,Batu Caves,Gombak
+Selangor,Beranang,Hulu Langat
+Selangor,Bestari Jaya,Kuala Selangor
+Selangor,Bukit Rotan,Kuala Selangor
+Selangor,Cheras,Hulu Langat
+Selangor,Cyberjaya,Sepang
+Selangor,Dengkil,Sepang
+Selangor,Hulu Langat,Hulu Langat
+Selangor,Jenjarom,Kuala Langat
+Selangor,Jeram,Kuala Selangor
+Selangor,KLIA,Sepang
+Selangor,Kajang,Hulu Langat
+Selangor,Kapar,Klang
+Selangor,Kerling,Hulu Selangor
+Selangor,Klang,Klang
+Selangor,Kuala Kubu Baru,Hulu Selangor
+Selangor,Kuala Selangor,Kuala Selangor
+Selangor,Kuang,Gombak
+Selangor,Pelabuhan Klang,Klang
+Selangor,Petaling Jaya,Petaling
+Selangor,Puchong,Petaling
+Selangor,Pulau Carey,Kuala Langat
+Selangor,Pulau Indah,Klang
+Selangor,Pulau Ketam,Klang
+Selangor,Rasa,Hulu Selangor
+Selangor,Rawang,Gombak
+Selangor,Sabak Bernam,Sabak Bernam
+Selangor,Sekinchan,Sabak Bernam
+Selangor,Semenyih,Hulu Langat
+Selangor,Sepang,Sepang
+Selangor,Serdang,Petaling
+Selangor,Serendah,Hulu Selangor
+Selangor,Seri Kembangan,Petaling
+Selangor,Shah Alam,Petaling
+Selangor,Subang Jaya,Petaling
+Selangor,Sungai Ayer Tawar,Sabak Bernam
+Selangor,Sungai Besar,Sabak Bernam
+Selangor,Sungai Buloh,Petaling
+Selangor,Sungai Pelek,Sepang
+Selangor,Tanjong Karang,Kuala Selangor
+Selangor,Tanjong Sepat,Kuala Langat
+Selangor,Tanjung Sepat,Kuala Langat
+Selangor,Telok Panglima Garang,Kuala Langat
+Terengganu,Ajil,Hulu Terengganu
+Terengganu,Al Muktatfi Billah Shah,Dungun
+Terengganu,Ayer Puteh,Kemaman
+Terengganu,Bukit Besi,Dungun
+Terengganu,Bukit Payong,Marang
+Terengganu,Ceneh,Kemaman
+Terengganu,Chalok,Setiu
+Terengganu,Cukai,Kemaman
+Terengganu,Dungun,Dungun
+Terengganu,Jerteh,Besut
+Terengganu,Kampung Raja,Besut
+Terengganu,Kemasek,Kemaman
+Terengganu,Kerteh,Kemaman
+Terengganu,Ketengah Jaya,Dungun
+Terengganu,Kijal,Kemaman
+Terengganu,Kuala Berang,Hulu Terengganu
+Terengganu,Kuala Besut,Besut
+Terengganu,Kuala Terengganu,Kuala Terengganu
+Terengganu,Marang,Marang
+Terengganu,Paka,Dungun
+Terengganu,Permaisuri,Setiu
+Terengganu,Sungai Tong,Setiu
+WP Kuala Lumpur,Hulu Langat,Kuala Lumpur
+WP Kuala Lumpur,Kuala Lumpur,Kuala Lumpur
+WP Labuan,Labuan,Labuan
+WP Putrajaya,Putrajaya,Putrajaya

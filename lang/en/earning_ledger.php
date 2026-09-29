@@ -1,0 +1,42 @@
+<?php
+
+return [
+    // index.blade.php
+    'title' => 'Earning Income Ledger',
+    'intro_note' => 'Debit = commission earned. Credit = commission paid out or reversed. Balance shown is as at the date selected below. Pick a selection and click Go — nothing is shown until you do.',
+    'field_group_label' => 'Group Label',
+    'field_group_leader_gl' => 'Group Leader (GL)',
+    'field_team_leader_tl' => 'Team Leader (TL)',
+    'field_introducer' => 'Introducer',
+    'field_team_member' => 'Team Member',
+    'field_ledger_as_at_date' => 'Ledger As At Date',
+    'make_selection_note' => 'Make a selection above, then click Go',
+    'admin_pick_note' => 'Pick a Group Label, Group Leader, Team Leader, or Introducer to view their ledger.',
+    'non_admin_pick_note' => 'Pick yourself or a team member to view their ledger.',
+    'col_role' => 'Role',
+    'col_total_debit' => 'Total Debit',
+    'col_total_credit' => 'Total Credit',
+    'col_balance_rm' => 'Balance (RM)',
+    'col_action' => 'Action',
+    'no_agents_match_filter_note' => 'No agents match this filter.',
+    'statement_link' => '📄 Statement',
+    'agent_count_page_x_of_y' => ':count agent(s) — Page :current / :last',
+
+    // statement.blade.php
+    'statement_title' => 'Earning Ledger Statement',
+    'ledger_as_at_page_x_of_y' => 'Earning Ledger as at :date — Page :current of :last',
+    'back_to_ledger_link' => '← Back to Ledger',
+    'opening_balance_label' => 'Opening Balance: RM :amount',
+    'no_prior_history_note' => '(no prior history — first entry ever for this agent)',
+    'carried_forward_note' => '(carried forward from previous page)',
+    'col_no' => 'No.',
+    'col_description' => 'Description',
+    'col_debit_rm' => 'Debit (RM)',
+    'col_credit_rm' => 'Credit (RM)',
+    'no_transactions_yet_note' => 'No earning transactions yet for this agent as at this date.',
+    'page_sub_total_label' => 'Page Sub Total',
+    'stat_opening_balance' => 'Opening Balance',
+    'stat_total_debit' => 'Total Debit',
+    'stat_total_credit' => 'Total Credit',
+    'stat_closing_balance' => 'Closing Balance',
+];

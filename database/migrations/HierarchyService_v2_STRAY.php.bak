@@ -1,0 +1,425 @@
+<?php
+
+namespace App\Services;
+
+use App\Models\Agent;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+
+class HierarchyService
+{
+    // -------------------------------------------------------
+    // Generate agent_code matching the live convention (e.g. "1-4-3"),
+    // using the safe next_child_seq counter. (unchanged from previous file)
+    // -------------------------------------------------------
+    public function generateAgentCode(Agent $sponsor): string
+    {
+        $retries = 0;
+
+        do {
+            $newCode = DB::transaction(function () use ($sponsor) {
+                $locked = Agent::lockForUpdate()->find($sponsor->agent_id);
+                $locked->increment('next_child_seq');
+                $nextSeq = $locked->next_child_seq;
+
+                if (! $locked->agent_code) {
+                    return (string) $nextSeq;
+                }
+
+                return $locked->agent_code . '-' . $nextSeq;
+            });
+
+            $exists = Agent::where('agent_code', $newCode)->exists();
+            $retries++;
+        } while ($exists && $retries < 10);
+
+        if ($exists) {
+            throw new \Exception('Could not generate unique agent code. Please retry.');
+        }
+
+        return $newCode;
+    }
+
+    public function generateMemberCode(Agent $sponsor): string
+    {
+        return $this->generateAgentCode($sponsor);
+    }
+
+    // -------------------------------------------------------
+    // MODULE 2A — Tier restriction check (unchanged)
+    // -------------------------------------------------------
+    public function canRecruit(Agent $sponsor): bool
+    {
+        if (! $sponsor->isIntroducer()) return true;
+        if ($sponsor->recruitment_blocked) return false;
+
+        $limit = DB::table('tier_recruitment_config')
+            ->where(fn($q) => $q->where('group_id', $sponsor->group_id)->orWhereNull('group_id'))
+            ->where('is_active', true)
+            ->orderByRaw('group_id IS NULL ASC')
+            ->value('max_tier_limit') ?? 2;
+
+        return $sponsor->recruitable_tier_depth < $limit;
+    }
+
+    public function getRecruitmentBlockReason(Agent $sponsor): string
+    {
+        $limit = DB::table('tier_recruitment_config')
+            ->where(fn($q) => $q->where('group_id', $sponsor->group_id)->orWhereNull('group_id'))
+            ->where('is_active', true)
+            ->orderByRaw('group_id IS NULL ASC')
+            ->value('max_tier_limit') ?? 2;
+
+        return "Recruitment tier limit reached (Tier {$limit}). " .
+               "Recruit {$limit} more Introducers to be promoted to Team Leader and unlock unlimited recruitment.";
+    }
+
+    // -------------------------------------------------------
+    // Register a new agent under a sponsor (unchanged from previous file)
+    // -------------------------------------------------------
+    public function registerUnderSponsor(Agent $sponsor, array $agentData, string $createdBy): Agent
+    {
+        if (! $this->canRecruit($sponsor)) {
+            throw new \Exception($this->getRecruitmentBlockReason($sponsor));
+        }
+
+        return DB::transaction(function () use ($sponsor, $agentData, $createdBy) {
+
+            $newCode       = $this->generateAgentCode($sponsor);
+            $newAgentId    = Str::uuid()->toString();
+            $tierDepth     = $sponsor->recruitable_tier_depth + 1;
+            $hierarchyPath = $sponsor->hierarchy_path . $newAgentId . '/';
+
+            $agent = Agent::create(array_merge($agentData, [
+                'agent_id'               => $newAgentId,
+                'agent_code'             => $newCode,
+                'member_code'            => $newCode,
+                'parent_id'              => $sponsor->agent_id,
+                'group_id'               => $sponsor->group_id,
+                'origin_group_id'        => $sponsor->group_id,
+                'hierarchy_path'         => $hierarchyPath,
+                'role'                   => 'INTRODUCER',
+                'status'                 => 'ACTIVE',
+                'recruitable_tier_depth' => $tierDepth,
+                'recruitment_blocked'    => false,
+                'created_by'             => $createdBy,
+            ]));
+
+            $this->evaluateRankChange($sponsor);
+
+            return $agent;
+        });
+    }
+
+    // -------------------------------------------------------
+    // MODULE 2 — Auto Promotion / Demotion Engine
+    // -------------------------------------------------------
+    public function evaluateRankChange(Agent $agent): void
+    {
+        DB::transaction(function () use ($agent) {
+
+            $locked = Agent::lockForUpdate()->find($agent->agent_id);
+            if (! $locked) return;
+
+            if ($locked->isIntroducer()) {
+                $directIntroducers = Agent::where('parent_id', $locked->agent_id)
+                                          ->where('status', 'ACTIVE')
+                                          ->where('role', 'INTRODUCER')
+                                          ->count();
+                if ($directIntroducers >= 3) {
+                    $this->promote($locked, 'TEAM_LEADER');
+                }
+            } elseif ($locked->isTeamLeader()) {
+                $directTLs = Agent::where('parent_id', $locked->agent_id)
+                                  ->where('status', 'ACTIVE')
+                                  ->where('role', 'TEAM_LEADER')
+                                  ->count();
+                if ($directTLs >= 3) {
+                    $this->promote($locked, 'GROUP_LEADER');
+                }
+                $directActiveIntroducers = Agent::where('parent_id', $locked->agent_id)
+                                                ->where('status', 'ACTIVE')
+                                                ->where('role', 'INTRODUCER')
+                                                ->count();
+                if ($directActiveIntroducers < 3 && $locked->isTeamLeader()) {
+                    $this->demote($locked, 'INTRODUCER');
+                }
+            } elseif ($locked->isGroupLeader()) {
+                $directActiveTLs = Agent::where('parent_id', $locked->agent_id)
+                                        ->where('status', 'ACTIVE')
+                                        ->where('role', 'TEAM_LEADER')
+                                        ->count();
+                if ($directActiveTLs < 3) {
+                    $this->demote($locked, 'TEAM_LEADER');
+                }
+            }
+        });
+    }
+
+    // -------------------------------------------------------
+    // PROMOTE — rewritten 03 Jul 2026 for Decisions 5 & 6
+    // -------------------------------------------------------
+    private function promote(Agent $agent, string $newRole): void
+    {
+        $oldRole      = $agent->role;
+        $oldParentId  = $agent->parent_id;
+        $oldGroupId   = $agent->group_id;
+        $newParentId  = null;
+        $newGroupId   = $oldGroupId;
+
+        // Decision 5 — promotion TO Group Leader always creates a BRAND NEW
+        // group_id, never reuses a previous one, even on re-promotion.
+        if ($newRole === 'GROUP_LEADER') {
+            $newGroupId  = $this->createNewGroupForAgent($agent);
+            $newParentId = null; // GL is root — no parent
+        }
+
+        $agent->update([
+            'role'                => $newRole,
+            'parent_id'           => $newParentId ?? $agent->parent_id,
+            'group_id'            => $newGroupId,
+            'recruitment_blocked' => false,
+        ]);
+
+        if ($newRole === 'GROUP_LEADER') {
+            // Move her entire CURRENT downline subtree into her new group.
+            // Former downline who already broke away to their own GL are
+            // naturally excluded — their hierarchy_path no longer contains
+            // her agent_id after their own promotion already rebuilt it.
+            $this->moveSubtreeToGroup($agent, $newGroupId);
+            $this->rebuildHierarchyPaths($agent);
+
+            // Decision 6 — reunite anyone displaced from her during a
+            // PREVIOUS demotion, who hasn't been reunited yet.
+            $this->reuniteDisplacedDownline($agent);
+        }
+
+        AuditService::logChange('agents', $agent->agent_id, 'PROMOTE', ['role' => $oldRole], ['role' => $newRole]);
+
+        $this->writeRoleHistory($agent, $oldRole, $newRole, $oldParentId, $newParentId, $oldGroupId, $newGroupId, 'AUTO_PROMOTED');
+    }
+
+    // -------------------------------------------------------
+    // DEMOTE — rewritten 03 Jul 2026 for Decisions 4 & 6
+    // -------------------------------------------------------
+    private function demote(Agent $agent, string $newRole): void
+    {
+        $oldRole    = $agent->role;
+        $oldGroupId = $agent->group_id;
+        $wasGL      = $agent->isGroupLeader();
+
+        $newParentAgent = $wasGL ? $this->findNearestActiveGL($agent) : null;
+        $newParentId    = $newParentAgent?->agent_id;
+        $newGroupId     = $newParentAgent?->group_id ?? $agent->group_id;
+
+        if ($wasGL) {
+            // Decision 4 — mark her group inactive, NEVER delete it.
+            DB::table('groups')->where('group_id', $oldGroupId)->update([
+                'is_active'  => false,
+                'updated_at' => now(),
+            ]);
+
+            // Her subordinate TEAM_LEADERs (and their downlines) must move —
+            // a TL's parent can never be another TL. Her own direct
+            // INTRODUCERS are NOT touched — a TL is allowed direct
+            // Introducers, so they correctly stay with her.
+            $subordinateTLs = Agent::where('parent_id', $agent->agent_id)
+                                    ->where('role', 'TEAM_LEADER')
+                                    ->get();
+
+            foreach ($subordinateTLs as $tl) {
+                // Decision 6 — mark as displaced (not permanent), so this
+                // specific TL and their downline can be auto-reunited if
+                // $agent is promoted to GL again later.
+                $tl->update([
+                    'parent_id'               => $newParentId,
+                    'displaced_from_agent_id' => $agent->agent_id,
+                ]);
+                $this->moveSubtreeToGroup($tl, $newGroupId, markDisplacedFrom: $agent->agent_id);
+            }
+
+            $this->rebuildHierarchyPaths($newParentAgent ?? $agent);
+        }
+
+        $agent->update([
+            'role'      => $newRole,
+            'parent_id' => $newParentId ?? $agent->parent_id,
+            'group_id'  => $newGroupId,
+        ]);
+
+        if ($agent->parent_id) {
+            $parent = Agent::find($agent->parent_id);
+            if ($parent) $this->evaluateRankChange($parent);
+        }
+
+        AuditService::logChange('agents', $agent->agent_id, 'DEMOTE', ['role' => $oldRole], ['role' => $newRole]);
+
+        $this->writeRoleHistory($agent, $oldRole, $newRole, null, $newParentId, $oldGroupId, $newGroupId, 'AUTO_DEMOTED');
+    }
+
+    // -------------------------------------------------------
+    // Decision 5 — create a brand new group for a newly-promoted GL
+    // -------------------------------------------------------
+    private function createNewGroupForAgent(Agent $agent): string
+    {
+        $groupId = Str::uuid()->toString();
+
+        DB::table('groups')->insert([
+            'group_id'           => $groupId,
+            'group_name'         => $agent->full_name,
+            'group_code'         => $agent->agent_code, // matches live convention — no separate letter prefix
+            'group_email'        => $agent->email,
+            'separator_char'     => '-',
+            'root_member_suffix' => '0',
+            'is_active'          => true,
+            'created_by'         => $agent->agent_id,
+            'created_at'         => now(),
+            'updated_at'         => now(),
+        ]);
+
+        return $groupId;
+    }
+
+    // -------------------------------------------------------
+    // Move an agent's entire current downline subtree to a new group_id.
+    // Optionally tags each moved agent with displaced_from_agent_id
+    // (used during demotion — Decision 6).
+    // -------------------------------------------------------
+    private function moveSubtreeToGroup(Agent $root, string $newGroupId, ?string $markDisplacedFrom = null): void
+    {
+        $query = Agent::where('hierarchy_path', 'like', "%/{$root->agent_id}/%");
+
+        if ($markDisplacedFrom) {
+            $query->update([
+                'group_id'                => $newGroupId,
+                'displaced_from_agent_id' => $markDisplacedFrom,
+                'updated_at'              => now(),
+            ]);
+        } else {
+            $query->update([
+                'group_id'   => $newGroupId,
+                'updated_at' => now(),
+            ]);
+        }
+    }
+
+    // -------------------------------------------------------
+    // Decision 6 — reunite anyone previously displaced from this agent
+    // during an earlier demotion, now that she's a GL again. Skips anyone
+    // who became a GL themselves in the meantime (existing "what moves"
+    // exception — checked by role != GROUP_LEADER).
+    // -------------------------------------------------------
+    private function reuniteDisplacedDownline(Agent $agent): void
+    {
+        $displaced = Agent::where('displaced_from_agent_id', $agent->agent_id)
+                          ->where('role', '!=', 'GROUP_LEADER')
+                          ->get();
+
+        foreach ($displaced as $member) {
+            // Only reunite direct former subordinates — their own downlines
+            // will follow automatically via moveSubtreeToGroup below.
+            if ($member->parent_id !== $agent->agent_id) {
+                $member->update(['parent_id' => $agent->agent_id]);
+            }
+            $member->update([
+                'group_id'                => $agent->group_id,
+                'displaced_from_agent_id' => null,
+            ]);
+            $this->moveSubtreeToGroup($member, $agent->group_id);
+        }
+
+        if ($displaced->isNotEmpty()) {
+            // Mark the original demotion event(s) as reunified so they're
+            // never processed again on a future re-promotion.
+            DB::table('role_history')
+                ->where('agent_id', $agent->agent_id)
+                ->where('reason', 'AUTO_DEMOTED')
+                ->whereNull('reunified_at')
+                ->update(['reunified_at' => now()]);
+
+            $this->rebuildHierarchyPaths($agent);
+        }
+    }
+
+    // -------------------------------------------------------
+    // Walk up the parent_id chain to find the first ACTIVE Group Leader.
+    // Falls back to beneficiary_agent_id if the chain runs out (Section 59).
+    // -------------------------------------------------------
+    private function findNearestActiveGL(Agent $agent): ?Agent
+    {
+        $current = $agent->parent_id ? Agent::find($agent->parent_id) : null;
+
+        while ($current) {
+            if ($current->role === 'GROUP_LEADER' && $current->status === 'ACTIVE') {
+                return $current;
+            }
+
+            if ($current->role === 'GROUP_LEADER' && $current->status !== 'ACTIVE' && $current->beneficiary_agent_id) {
+                $beneficiary = Agent::find($current->beneficiary_agent_id);
+                if ($beneficiary && $beneficiary->status === 'ACTIVE') {
+                    return $beneficiary;
+                }
+            }
+
+            $current = $current->parent_id ? Agent::find($current->parent_id) : null;
+        }
+
+        return null; // No active GL found anywhere up the chain
+    }
+
+    // -------------------------------------------------------
+    // Permanent audit trail — Section 25.4
+    // -------------------------------------------------------
+    private function writeRoleHistory(
+        Agent $agent,
+        string $oldRole,
+        string $newRole,
+        ?string $oldParentId,
+        ?string $newParentId,
+        ?string $oldGroupId,
+        ?string $newGroupId,
+        string $reason
+    ): void {
+        DB::table('role_history')->insert([
+            'history_id'     => Str::uuid()->toString(),
+            'agent_id'       => $agent->agent_id,
+            'old_role'       => $oldRole,
+            'new_role'       => $newRole,
+            'old_parent_id'  => $oldParentId,
+            'new_parent_id'  => $newParentId,
+            'old_group_id'   => $oldGroupId,
+            'new_group_id'   => $newGroupId,
+            'effective_date' => now(),
+            'reason'         => $reason,
+            'performed_by'   => null, // system-automatic
+            'created_at'     => now(),
+        ]);
+    }
+
+    private function rebuildHierarchyPaths(Agent $root): void
+    {
+        $descendants = Agent::where('hierarchy_path', 'like', "%/{$root->agent_id}/%")->get();
+        foreach ($descendants as $d) {
+            $path = $this->buildPath($d);
+            DB::table('agents')->where('agent_id', $d->agent_id)->update(['hierarchy_path' => $path]);
+        }
+    }
+
+    private function buildPath(Agent $agent): string
+    {
+        $path    = '/';
+        $current = $agent;
+        $chain   = [];
+
+        while ($current) {
+            $chain[] = $current->agent_id;
+            $current = $current->parent_id ? Agent::find($current->parent_id) : null;
+        }
+
+        foreach (array_reverse($chain) as $id) {
+            $path .= $id . '/';
+        }
+
+        return $path;
+    }
+}

@@ -1,0 +1,42 @@
+<?php
+
+return [
+    // index.blade.php
+    'title' => 'Lejar Pendapatan Komisen',
+    'intro_note' => 'Debit = komisen diperoleh. Kredit = komisen dibayar atau dibalikkan. Baki ditunjukkan adalah pada tarikh yang dipilih di bawah. Buat pilihan dan klik Go — tiada apa dipaparkan sehingga anda berbuat demikian.',
+    'field_group_label' => 'Label Kumpulan',
+    'field_group_leader_gl' => 'Ketua Kumpulan (GL)',
+    'field_team_leader_tl' => 'Ketua Pasukan (TL)',
+    'field_introducer' => 'Pengenal',
+    'field_team_member' => 'Ahli Pasukan',
+    'field_ledger_as_at_date' => 'Lejar Pada Tarikh',
+    'make_selection_note' => 'Buat pilihan di atas, kemudian klik Go',
+    'admin_pick_note' => 'Pilih Label Kumpulan, Ketua Kumpulan, Ketua Pasukan, atau Pengenal untuk melihat lejar mereka.',
+    'non_admin_pick_note' => 'Pilih diri anda atau ahli pasukan untuk melihat lejar mereka.',
+    'col_role' => 'Peranan',
+    'col_total_debit' => 'Jumlah Debit',
+    'col_total_credit' => 'Jumlah Kredit',
+    'col_balance_rm' => 'Baki (RM)',
+    'col_action' => 'Tindakan',
+    'no_agents_match_filter_note' => 'Tiada ejen sepadan dengan penapis ini.',
+    'statement_link' => '📄 Penyata',
+    'agent_count_page_x_of_y' => ':count ejen — Halaman :current / :last',
+
+    // statement.blade.php
+    'statement_title' => 'Penyata Lejar Pendapatan Komisen',
+    'ledger_as_at_page_x_of_y' => 'Lejar Pendapatan Komisen pada :date — Halaman :current daripada :last',
+    'back_to_ledger_link' => '← Kembali ke Lejar',
+    'opening_balance_label' => 'Baki Pembukaan: RM :amount',
+    'no_prior_history_note' => '(tiada sejarah terdahulu — entri pertama untuk ejen ini)',
+    'carried_forward_note' => '(dibawa ke depan daripada halaman sebelumnya)',
+    'col_no' => 'No.',
+    'col_description' => 'Penerangan',
+    'col_debit_rm' => 'Debit (RM)',
+    'col_credit_rm' => 'Kredit (RM)',
+    'no_transactions_yet_note' => 'Tiada transaksi pendapatan lagi untuk ejen ini pada tarikh ini.',
+    'page_sub_total_label' => 'Jumlah Kecil Halaman',
+    'stat_opening_balance' => 'Baki Pembukaan',
+    'stat_total_debit' => 'Jumlah Debit',
+    'stat_total_credit' => 'Jumlah Kredit',
+    'stat_closing_balance' => 'Baki Penutup',
+];

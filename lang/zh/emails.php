@@ -1,0 +1,53 @@
+<?php
+
+return [
+    // admin-new-registration
+    'new_agent_registration_title' => '🔔 新代理注册',
+    'admin_notification_subtitle' => 'GeneralLink Digital Ecosystem — 管理员通知',
+    'personal_details_heading' => '个人资料',
+    'nric_mykad_label' => '身份证 / MyKad',
+    'email_address_label' => '电邮地址',
+    'mobile_phone_label' => '手机号码',
+    'full_address_label' => '完整地址',
+    'bank_details_heading' => '银行资料',
+    'bank_account_label' => '银行账户',
+    'upline_registration_info_heading' => '上线与注册信息',
+    'upline_type_label' => '上线类型',
+    'upline_name_label' => '上线姓名',
+    'upline_code_label' => '上线编号',
+    'role_assigned_label' => '已分配角色',
+    'submitted_at_label' => '提交时间',
+    'pending_admin_assignment' => '待管理员分配',
+    'action_required_note_template' => '⚠ <strong>需要处理：</strong>此代理在没有推荐链接的情况下注册。请在管理后台将其分配给一位 :role。',
+    'footer_tagline' => 'GeneralLink Digital Ecosystem · AI 驱动 · 马来西亚 · 东南亚',
+    'automated_notification_note' => '这是自动通知，请勿回复。',
+
+    // agent-assigned
+    'account_assignment_confirmed_title' => '🎉 账户分配已确认！',
+    'dear_greeting_template' => '尊敬的 <strong>:name</strong>，',
+    'account_assigned_note_template' => '您的 GeneralLink 账户已分配给一位 :role。您现已完全连接到 GeneralLink 网络！',
+    'your_name_label' => '您的姓名',
+    'your_affiliate_code_label' => '您的联盟编号',
+    'generating_placeholder' => '生成中...',
+    'assigned_role_template' => '已分配的 :role',
+    'role_affiliate_code_template' => ':role 联盟编号',
+    'assignment_date_label' => '分配日期',
+    'login_dashboard_note' => '您现在可以登录您的 GeneralLink 仪表板，开始您的旅程！',
+    'login_to_dashboard_button' => '登录仪表板 →',
+
+    // agent-verification
+    'verify_email_page_title' => '验证您的电邮 — GeneralLink',
+    'brand_name_header' => 'GENERAL LINK',
+    'brand_tagline' => '数字联盟生态系统',
+    'welcome_heading' => '欢迎加入 GeneralLink！🎉',
+    'registering_thanks_note' => '感谢您注册成为 <strong>GeneralLink Digital Ecosystem</strong> 的联盟代理 — 马来西亚领先的数字保险联盟平台。',
+    'verify_activate_note' => '请验证您的电邮地址以激活您的账户并设置密码。',
+    'verify_button_label' => '✅ 验证我的电邮地址',
+    'what_happens_after_heading' => '📋 验证后会发生什么：',
+    'what_happens_after_steps' => '1️⃣ 点击上方按钮验证您的电邮<br>2️⃣ 您将被引导设置密码<br>3️⃣ 为您的账户设置一个强密码<br>4️⃣ 登录并开始您的 GeneralLink 之旅！',
+    'button_not_working_note' => '如果上方按钮无法使用，请复制此链接并粘贴到您的浏览器：',
+    'security_notice_template' => '⚠️ <strong>安全提示：</strong>此链接将在 <strong>24 小时</strong>后失效。如果您没有注册，请忽略此邮件。',
+    'footer_brand' => 'GeneralLink Digital Ecosystem',
+    'footer_tagline_caps' => 'AI 驱动 · 马来西亚 · 东南亚',
+    'automated_email_note' => '这是自动邮件，请勿回复。',
+];

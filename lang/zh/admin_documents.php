@@ -1,0 +1,53 @@
+<?php
+
+return [
+    // admin/document-templates/index.blade.php
+    'page_title' => '文件模板',
+    'intro_note' => '针对每个供应商 + 产品 + 文件类型，勾选该文件通常包含哪些字段——实时销售交易页面会依据此设定聚焦其自动读取功能。',
+    'new_template_button' => '+ 新建文件模板',
+    'viewing_matched_note' => '📄 正在查看 :product 的匹配模板。',
+    'show_all_templates_link' => '显示所有模板',
+    'col_template_name' => '模板名称',
+    'col_document_type' => '文件类型',
+    'col_version' => '版本',
+    'created_by_date_note' => '由 :name 创建 · :date',
+    'versions_count_link' => ':count 个版本',
+    'new_version_link' => '新版本',
+    'deactivate_button' => '停用',
+    'activate_button' => '启用',
+    'any_product_word' => '任何产品',
+    'this_product_word' => '此产品',
+
+    // admin/document-templates/form.blade.php
+    'new_version_page_title' => '新版本',
+    'edit_template_page_title' => '编辑文件模板',
+    'new_template_page_title' => '新建文件模板',
+    'intro_field_note' => '请告诉系统此供应商文件上通常包含哪些字段——实时销售交易页面会依据此列表聚焦其自动读取功能。无需上传样本或标注，只需在下方勾选适用项目。',
+    'creating_version_note' => '正在创建 ":name" 的版本 :number。版本 :prev 将保留在历史记录中。',
+    'vendor_label' => '供应商 *',
+    'product_label' => '产品（留空则匹配此供应商的任何产品）',
+    'product_search_placeholder' => '输入以搜索...',
+    'no_products_found_note' => '未找到此供应商的产品。',
+    'document_type_label' => '文件类型 *',
+    'template_name_label' => '模板名称 *',
+    'template_name_placeholder' => '例如：Pacific & Orient - 汽车保单明细表',
+    'created_by_on_version_note' => '由 :name 于 :date 创建 · 版本 :version',
+    'which_fields_heading' => '此文件包含哪些字段？（勾选所有适用项目）',
+    'cancel_link' => '← 取消',
+    'save_new_version_button' => '保存新版本',
+    'update_template_button' => '更新模板',
+    'save_template_button' => '保存模板',
+
+    // admin/document-templates/history.blade.php
+    'version_history_page_title' => '模板版本历史',
+    'every_version_note' => '":template" — :vendor / :product / :doctype 曾校准过的每一个版本。同一时间只有一个版本处于启用状态（用于未来上传）。',
+    'back_to_list_link' => '返回列表',
+    'version_label' => '版本 :number',
+    'active_used_now_badge' => '启用中 — 目前使用',
+    'retired_badge' => '已停用',
+    'created_by_on_note' => '由 :name 于 :date 创建',
+    'retired_on_suffix' => '· 于 :date 停用',
+    'looks_for_suffix' => '— 查找 ":text"',
+    'reactivate_button' => '重新启用此版本',
+    'view_edit_link' => '查看 / 编辑',
+];

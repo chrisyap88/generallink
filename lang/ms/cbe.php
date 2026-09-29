@@ -1,0 +1,95 @@
+<?php
+
+// NEW 18 Aug 2026 — Bahasa Malaysia. CBE Ecosystem Home screen static text.
+return [
+    'preview_banner'     => 'MOD PRATONTON — data contoh dipaparkan, tiada ahli CBE sebenar lagi. Hanya boleh diakses oleh Admin di /cbe/preview.',
+    'search_placeholder' => 'Cari GLADE...',
+
+    'rail_home'          => 'Utama',
+    'rail_profile'       => 'Profil',
+    'rail_reports'       => 'Laporan',
+    'rail_communication' => 'Komunikasi',
+    'rail_growth'        => 'Pertumbuhan',
+
+    'sb_overview'               => 'Gambaran Keseluruhan',
+    'sb_network_tree'           => 'Struktur Rangkaian',
+    'sb_customer_relationship'  => 'Hubungan Pelanggan',
+    'sb_business'               => 'Perniagaan',
+    'sb_communication'          => 'Komunikasi',
+    'sb_master_file_maintenance'=> 'Penyelenggaraan Fail Induk',
+    'sb_growth_outreach'        => 'Pusat Pertumbuhan & Jangkauan',
+    'sb_my_account'             => 'Akaun Saya',
+
+    'sb_ecosystem_home'            => 'Laman Utama Ekosistem',
+    'sb_my_network'                => 'Rangkaian Saya',
+    'sb_customers'                 => 'Pelanggan',
+    'sb_customer_kpi'               => 'KPI Pelanggan',
+    'sb_customer_referrals'         => 'Rujukan Pelanggan',
+    'sb_support_tickets'            => 'Tiket Sokongan',
+    'sb_submit_sales_transaction'   => 'Hantar Transaksi Jualan',
+    'sb_sales_transaction_maint'    => 'Penyelenggaraan Transaksi Jualan',
+    'sb_help_desk'                  => 'Meja Bantuan',
+    'sb_notice_board'               => 'Papan Notis',
+    'sb_reminders'                  => 'Peringatan',
+    'sb_hierarchy_levels'           => 'Tahap Hierarki',
+    'sb_records_reports'            => 'Rekod & Laporan',
+    'sb_administration_management'  => 'Pengurusan Pentadbiran',
+    'sb_meeting_minutes'            => 'Minit Mesyuarat',
+    'sb_activities'                 => 'Aktiviti',
+    // BAHARU 17 Sep 2026 — Papan Notis dan Kalendar milik kuil ini
+    // sendiri (bukan yang seluruh platform di atas).
+    'sb_temple_notice_board'        => 'Papan Notis',
+    'sb_temple_calendar'            => 'Kalendar Acara',
+    'sb_cbe_messaging'              => 'Pemesejan',
+    'sb_cbe_tickets' => 'Tiket Sokongan',
+    'sb_bank_statement'             => 'Penyata Bank',
+    'sb_annual_report'              => 'Laporan Tahunan',
+    'sb_accounting'                 => 'Perakaunan',
+    'sb_exec_dashboard'             => 'Papan Pemuka Eksekutif',
+    'sb_events_donations'           => 'Acara & Derma',
+    'sb_events'                     => 'Acara',
+    'sb_donor_register'             => 'Daftar Penderma',
+    'sb_my_referral_link'           => 'Pautan Rujukan Saya',
+    'sb_marketplace'                => 'Pasaran',
+    'sb_submit_marketing_content'   => 'Hantar Kandungan Pemasaran',
+    'sb_send_survey'                => 'Hantar Tinjauan',
+    'sb_my_profile'                 => 'Profil Saya',
+    'sb_my_integrations'            => 'Integrasi Saya',
+    'sb_document_credit'            => 'Kredit Dokumen',
+    'tag_soon'                      => 'akan datang',
+    'tag_live'                      => 'aktif',
+
+    'community_fallback'   => 'Komuniti CBE',
+    'close_profile_header'  => 'Tutup Bar Profil',
+    'edit_profile'           => 'Edit Profil',
+
+    'good_morning'    => 'Selamat Pagi',
+    'good_afternoon'  => 'Selamat Tengah Hari',
+    'good_evening'    => 'Selamat Petang',
+    'greeting_sub'    => 'Berikut adalah perkembangan terkini dalam dunia GLADE anda.',
+
+    'my_world'        => 'Dunia Saya',
+    'reminders_due'   => 'Peringatan Tertunggak',
+    'new_notices'     => 'Notis Baharu',
+
+    'quick_actions'      => 'Tindakan Pantas',
+    'qa_edit_my_profile'  => 'Edit Profil Saya',
+    'qa_help_desk'        => 'Meja Bantuan',
+    'qa_view_notices'     => 'Lihat Notis',
+    'qa_my_reminders'     => 'Peringatan Saya',
+
+    'smart_reminders'        => 'Peringatan Pintar',
+    'view_all'                => 'Lihat Semua',
+    'no_reminders'            => 'Tiada peringatan tertunggak buat masa ini.',
+    'due'                      => 'Tarikh Akhir',
+    'reminder_badge'           => 'Peringatan',
+
+    'notice_board'      => 'Papan Notis',
+    'no_notices'         => 'Tiada notis disiarkan buat masa ini.',
+
+    'hierarchy_levels'          => 'Tahap Hierarki',
+    'no_hierarchy_levels'        => 'Tahap hierarki belum ditetapkan — dikonfigurasikan oleh Admin di bawah Penyelenggaraan Nama Kumpulan.',
+
+    'glade_home_title' => 'Menu Utama',
+    'glade_home_hint'  => 'Pilih program daripada menu di sebelah kiri untuk bermula.',
+];

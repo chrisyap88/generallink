@@ -1,0 +1,42 @@
+<?php
+
+return [
+    // index.blade.php
+    'title' => '收入账本',
+    'intro_note' => '借方 = 已赚取的佣金。贷方 = 已支付或已冲销的佣金。所示余额为下方所选日期的余额。请先选择并点击"前往" — 未点击前不会显示任何内容。',
+    'field_group_label' => '群组标签',
+    'field_group_leader_gl' => '集团领袖（GL）',
+    'field_team_leader_tl' => '团队领袖（TL）',
+    'field_introducer' => '介绍人',
+    'field_team_member' => '团队成员',
+    'field_ledger_as_at_date' => '账本截至日期',
+    'make_selection_note' => '请先在上方选择，然后点击"前往"',
+    'admin_pick_note' => '选择群组标签、集团领袖、团队领袖或介绍人以查看其账本。',
+    'non_admin_pick_note' => '选择您自己或团队成员以查看其账本。',
+    'col_role' => '角色',
+    'col_total_debit' => '总借方',
+    'col_total_credit' => '总贷方',
+    'col_balance_rm' => '余额（RM）',
+    'col_action' => '操作',
+    'no_agents_match_filter_note' => '没有符合此筛选条件的代理。',
+    'statement_link' => '📄 结单',
+    'agent_count_page_x_of_y' => ':count 位代理 — 第 :current / :last 页',
+
+    // statement.blade.php
+    'statement_title' => '收入账本结单',
+    'ledger_as_at_page_x_of_y' => '截至 :date 的收入账本 — 第 :current 页，共 :last 页',
+    'back_to_ledger_link' => '← 返回账本',
+    'opening_balance_label' => '期初余额：RM :amount',
+    'no_prior_history_note' => '（无过往记录 — 此代理的首笔记录）',
+    'carried_forward_note' => '（自上一页结转）',
+    'col_no' => '编号',
+    'col_description' => '说明',
+    'col_debit_rm' => '借方（RM）',
+    'col_credit_rm' => '贷方（RM）',
+    'no_transactions_yet_note' => '截至此日期，该代理尚无收入交易记录。',
+    'page_sub_total_label' => '本页小计',
+    'stat_opening_balance' => '期初余额',
+    'stat_total_debit' => '总借方',
+    'stat_total_credit' => '总贷方',
+    'stat_closing_balance' => '期末余额',
+];

@@ -1,0 +1,46 @@
+<?php
+
+// NEW 15 Sep 2026 — per Chris: member-facing appointment booking with
+// a Sensei/Consultant/Legal Advisor (or any other practitioner type
+// Admin has set up) — always with an existing practitioner, never a
+// manually-typed contact.
+return [
+    'page_title' => 'Book Appointment',
+    'my_appointments' => 'My Appointments',
+    'no_membership' => 'You are not registered as a member of any CBE community yet, so there is nothing to book an appointment with.',
+    'select_your_entity' => 'Select which entity to book through',
+    'choose_practitioner_type' => 'Choose who you would like to book an appointment with',
+    'no_practitioner_types' => 'No appointment types are available to book yet.',
+    'practitioners_available' => ':count available',
+    'choose_practitioner' => 'Choose a Practitioner',
+    'no_practitioners' => 'No practitioners of this type are currently available.',
+    'back_to_types' => '← Back',
+    'back_to_practitioners' => '← Back',
+    'select_date' => 'Select a Date',
+    'available_slots' => 'Available Time Slots',
+    'no_slots_this_date' => 'No open slots on this date — try another date.',
+    'closed_leave' => 'Not available on this date (on leave).',
+    'closed_no_hours' => 'Not available on this date.',
+    'your_upcoming_with_them' => 'You already have :count upcoming appointment(s) with this practitioner.',
+    'notes_label' => 'Notes (optional)',
+    'notes_placeholder' => 'Anything you would like them to know beforehand',
+    'confirm_booking' => 'Confirm Booking',
+    'booking_confirmed' => '✓ Your appointment has been booked.',
+    'booking_cancelled' => '✓ Your appointment has been cancelled.',
+    'err_out_of_window' => 'That date is outside the practitioner\'s current booking window.',
+    'err_not_available' => 'The practitioner is not available on that date.',
+    'err_slot_taken' => 'That time slot is no longer available — please choose another.',
+    'err_max_upcoming' => 'You already have the maximum of :count upcoming appointment(s) allowed with this practitioner.',
+    'col_practitioner' => 'Practitioner',
+    'col_type' => 'Type',
+    'col_date' => 'Date',
+    'col_time' => 'Time',
+    'col_status' => 'Status',
+    'col_action' => 'Action',
+    'status_confirmed' => 'Confirmed',
+    'status_cancelled' => 'Cancelled',
+    'cancel_appointment' => 'Cancel',
+    'confirm_cancel' => 'Cancel this appointment?',
+    'no_appointments' => 'You have no appointments yet.',
+    'book_new' => '+ Book New Appointment',
+];

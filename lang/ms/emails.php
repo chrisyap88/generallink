@@ -1,0 +1,53 @@
+<?php
+
+return [
+    // admin-new-registration
+    'new_agent_registration_title' => '🔔 Pendaftaran Ejen Baharu',
+    'admin_notification_subtitle' => 'GeneralLink Digital Ecosystem — Notifikasi Admin',
+    'personal_details_heading' => 'Butiran Peribadi',
+    'nric_mykad_label' => 'NRIC / MyKad',
+    'email_address_label' => 'Alamat E-mel',
+    'mobile_phone_label' => 'Telefon Bimbit',
+    'full_address_label' => 'Alamat Penuh',
+    'bank_details_heading' => 'Butiran Bank',
+    'bank_account_label' => 'Akaun Bank',
+    'upline_registration_info_heading' => 'Maklumat Upline & Pendaftaran',
+    'upline_type_label' => 'Jenis Upline',
+    'upline_name_label' => 'Nama Upline',
+    'upline_code_label' => 'Kod Upline',
+    'role_assigned_label' => 'Peranan Ditetapkan',
+    'submitted_at_label' => 'Dihantar Pada',
+    'pending_admin_assignment' => 'MENUNGGU PENETAPAN ADMIN',
+    'action_required_note_template' => '⚠ <strong>Tindakan Diperlukan:</strong> Ejen ini mendaftar tanpa pautan rujukan. Sila tetapkan mereka kepada seorang :role dalam papan pemuka admin.',
+    'footer_tagline' => 'GeneralLink Digital Ecosystem · Dikuasakan AI · Malaysia · Asia Tenggara',
+    'automated_notification_note' => 'Ini adalah notifikasi automatik. Sila jangan balas.',
+
+    // agent-assigned
+    'account_assignment_confirmed_title' => '🎉 Penetapan Akaun Disahkan!',
+    'dear_greeting_template' => 'Salam sejahtera <strong>:name</strong>,',
+    'account_assigned_note_template' => 'Akaun GeneralLink anda telah ditetapkan kepada seorang :role. Anda kini disambungkan sepenuhnya kepada rangkaian GeneralLink!',
+    'your_name_label' => 'Nama Anda',
+    'your_affiliate_code_label' => 'Kod Affiliate Anda',
+    'generating_placeholder' => 'Sedang dijana...',
+    'assigned_role_template' => ':role Ditetapkan',
+    'role_affiliate_code_template' => 'Kod Affiliate :role',
+    'assignment_date_label' => 'Tarikh Penetapan',
+    'login_dashboard_note' => 'Anda kini boleh log masuk ke papan pemuka GeneralLink anda dan mulakan perjalanan anda!',
+    'login_to_dashboard_button' => 'Log Masuk ke Papan Pemuka →',
+
+    // agent-verification
+    'verify_email_page_title' => 'Sahkan E-mel Anda — GeneralLink',
+    'brand_name_header' => 'GENERAL LINK',
+    'brand_tagline' => 'EKOSISTEM AFFILIATE DIGITAL',
+    'welcome_heading' => 'Selamat Datang ke GeneralLink! 🎉',
+    'registering_thanks_note' => 'Terima kasih kerana mendaftar sebagai ejen affiliate dengan <strong>GeneralLink Digital Ecosystem</strong> — platform affiliate insurans digital terkemuka Malaysia.',
+    'verify_activate_note' => 'Sila sahkan alamat e-mel anda untuk mengaktifkan akaun anda dan mencipta kata laluan anda.',
+    'verify_button_label' => '✅ SAHKAN ALAMAT E-MEL SAYA',
+    'what_happens_after_heading' => '📋 Apa yang berlaku selepas pengesahan:',
+    'what_happens_after_steps' => '1️⃣ Klik butang di atas untuk sahkan e-mel anda<br>2️⃣ Anda akan diarahkan untuk mencipta kata laluan anda<br>3️⃣ Tetapkan kata laluan yang kukuh untuk akaun anda<br>4️⃣ Log masuk dan mulakan perjalanan GeneralLink anda!',
+    'button_not_working_note' => 'Jika butang di atas tidak berfungsi, salin dan tampal pautan ini ke pelayar anda:',
+    'security_notice_template' => '⚠️ <strong>Notis Keselamatan:</strong> Pautan ini tamat tempoh dalam <strong>24 jam</strong>. Jika anda tidak mendaftar, sila abaikan e-mel ini.',
+    'footer_brand' => 'GeneralLink Digital Ecosystem',
+    'footer_tagline_caps' => 'DIKUASAKAN AI · MALAYSIA · ASIA TENGGARA',
+    'automated_email_note' => 'Ini adalah e-mel automatik. Sila jangan balas.',
+];

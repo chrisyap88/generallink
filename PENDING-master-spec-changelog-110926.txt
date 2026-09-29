@@ -1,0 +1,90 @@
+PENDING MASTER SPEC UPDATE — staged 11 Sep 2026
+=================================================
+This is a STAGING NOTE, not an official master-spec version. The tool
+sandbox needed to open/edit the real master-spec-v154-100926.docx and
+produce a proper v155 .docx was down all session (Linux VM service on
+Chris's machine not running). Once it's back, merge everything below
+into a new master-spec-v155-DDMMYY.docx (following on from v154), and
+save a dated snapshot of the OLD v154 into the "version log" folder
+first, per Chris's standing workflow. After merging, this file can be
+left in place or deleted — it is not itself a spec version.
+
+CHANGES SINCE v154 (100926) — to fold into v155
+------------------------------------------------
+
+1. Task #412 — Set Up CBE Group added as the FIRST program inside
+   Master File Maintenance (Financial Accounting Module sidebar),
+   ahead of Entity Maintenance. Links to
+   route('admin.masterfile.group-names', ['type' => 'CBE']).
+   New lang key: cbe_accounting.tile_setup_cbe_group (en/ms/zh added).
+   File: resources/views/layouts/glade.blade.php (~line 460-474).
+
+2. Task #412 — form_parent_none label corrected in
+   lang/{en,ms,zh}/cbe_masterfile.php. Used to hardcode "this is the
+   top (HQ) level," which wrongly implied Parent=None only made sense
+   for the top level. Now reads as generic: fine to use at ANY level,
+   link to the real parent later via Insert/Restructure or Link to
+   Another Group once that parent exists. Confirms: YES, Chris can key
+   in a Branch (or any level) directly with no HQ/State created first.
+
+3. Task #413 — Access-control gap found and fixed: the new "Set Up CBE
+   Group" and "Entity Maintenance" links inside Master File Maintenance
+   were visible to BOTH platform Admin and CBE node officers, but both
+   routes (admin.masterfile.group-names, admin.cbe-kpi.hierarchy-
+   nodes.create) sit inside the role:ADMIN-only route group in
+   routes/web.php. A node officer clicking either would get a 403.
+   Fixed by wrapping both links in @if($isAdmin) so only platform Admin
+   sees them there.
+
+4. Task #413 — SAME BUG ALSO EXISTS, NOT YET FIXED, in a second place:
+   the Membership Module sidebar section (glade.blade.php ~line 840-841)
+   has its OWN "Entity Maintenance" link, which already computes
+   $hnParams = $isOfficer ? ['group' => $officerGroupId] : [] — i.e.
+   the code clearly intends for a node officer to use this scoped to
+   their own group — but it points to the same role:ADMIN-only route,
+   so a real officer would still 403. This was surfaced but NOT
+   resolved — it needs a decision from Chris:
+     (a) Loosen the route's middleware so an active cbe_node_officers
+         row is also accepted (officer manages only their OWN node), or
+     (b) Keep entity/hierarchy setup platform-Admin-only, and instead
+         hide this Membership Module link from officers too (same
+         @if($isAdmin) treatment as fix #3 above).
+   NOT YET ASKED/ANSWERED — flag this to Chris again when resuming.
+
+5. Confirmed (no code change): GLADE has 2 admin categories by design —
+   (1) GeneralLink's own platform Admin, agents.role = 'ADMIN', exactly
+   3 accounts (Director/Finance/Sales) — Chris logs in as this.
+   (2) Each CBE hierarchy node's own officer, one row per (node, role,
+   agent) in cbe_node_officers, scoped to only that node via
+   $officerNodeId / $officerGroupId in glade.blade.php.
+   /glade is the intentional SHARED front door for both — see
+   app/Http/Controllers/Auth/GladePortalController.php,
+   hasGladeAccess()/landingFor(). Chris logging in as platform Admin
+   Director via the /glade URL is correct, expected behaviour, not a
+   mistake.
+
+OUTSTANDING / NOT YET DONE
+--------------------------
+- Chris still needs to confirm he ran:
+    cd C:\xampp\htdocs\generallink
+    php artisan migrate
+  for database/migrations/2026_09_11_000001_add_coverage_postcode_
+  range_to_cbe_hierarchy_nodes.php (adds coverage_postcode_start/end
+  to cbe_hierarchy_nodes). NOT CONFIRMED as run yet.
+
+- Decision needed from Chris on point #4 above (officer access to
+  Entity Maintenance via Membership Module).
+
+- Sandbox/bash environment on Chris's machine was down this entire
+  session ("VM service not running. Restart your computer to restore
+  it."). This blocks: running migrations myself, opening/editing the
+  actual master-spec .docx, taking version-log snapshots, and any
+  php artisan / composer / npm command. All code edits this session
+  were still done directly via file Read/Edit/Write (which work
+  independently of that sandbox) — only shell-command execution and
+  binary-file (docx) handling were blocked.
+
+- Task #75 (AI Module Phase 17: Printable PDF Official Receipts) and
+  Task #84 (Final verification sweep + master spec update for hub
+  reorg) were already in_progress before this session per the task
+  list and remain unfinished.

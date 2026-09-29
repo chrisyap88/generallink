@@ -1,0 +1,53 @@
+<?php
+
+return [
+    // admin/document-templates/index.blade.php
+    'page_title' => 'Document Templates',
+    'intro_note' => 'For each Vendor + Product + Document Type, tick which fields normally appear on that document — the live Sales Transaction screen uses this to focus its automatic reading.',
+    'new_template_button' => '+ New Document Template',
+    'viewing_matched_note' => '📄 Viewing matched template(s) for :product.',
+    'show_all_templates_link' => 'Show all templates',
+    'col_template_name' => 'Template Name',
+    'col_document_type' => 'Document Type',
+    'col_version' => 'Version',
+    'created_by_date_note' => 'by :name · :date',
+    'versions_count_link' => ':count versions',
+    'new_version_link' => 'New Version',
+    'deactivate_button' => 'Deactivate',
+    'activate_button' => 'Activate',
+    'any_product_word' => 'Any product',
+    'this_product_word' => 'this product',
+
+    // admin/document-templates/form.blade.php
+    'new_version_page_title' => 'New Version',
+    'edit_template_page_title' => 'Edit Document Template',
+    'new_template_page_title' => 'New Document Template',
+    'intro_field_note' => "Tell the system which fields normally appear on this vendor's document — the live Sales Transaction screen uses this list to focus its automatic reading. No sample upload or labeling needed; just tick what applies below.",
+    'creating_version_note' => 'Creating version :number of ":name". Version :prev stays in history.',
+    'vendor_label' => 'Vendor *',
+    'product_label' => 'Product (leave blank to match any product for this vendor)',
+    'product_search_placeholder' => 'Type to search...',
+    'no_products_found_note' => 'No products found for this vendor.',
+    'document_type_label' => 'Document Type *',
+    'template_name_label' => 'Template Name *',
+    'template_name_placeholder' => 'e.g. Pacific & Orient - Motor Policy Schedule',
+    'created_by_on_version_note' => 'Created by :name on :date · version :version',
+    'which_fields_heading' => 'Which fields appear on this document? (tick all that apply)',
+    'cancel_link' => '← Cancel',
+    'save_new_version_button' => 'Save New Version',
+    'update_template_button' => 'Update Template',
+    'save_template_button' => 'Save Template',
+
+    // admin/document-templates/history.blade.php
+    'version_history_page_title' => 'Template Version History',
+    'every_version_note' => 'Every version ever calibrated for :template — :vendor / :product / :doctype. Only one version is active (used for future uploads) at a time.',
+    'back_to_list_link' => 'Back to list',
+    'version_label' => 'Version :number',
+    'active_used_now_badge' => 'Active — used now',
+    'retired_badge' => 'Retired',
+    'created_by_on_note' => 'Created by :name on :date',
+    'retired_on_suffix' => '· Retired :date',
+    'looks_for_suffix' => '— looks for ":text"',
+    'reactivate_button' => 'Reactivate this version',
+    'view_edit_link' => 'View / edit',
+];

@@ -1,0 +1,1 @@
+<?php file_put_contents(__DIR__."/resources/views/masterfile/vendor-profile.blade.php", file_get_contents(__DIR__."/vendor-profile-new.blade.php")); echo "DONE";

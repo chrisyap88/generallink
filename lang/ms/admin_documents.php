@@ -1,0 +1,53 @@
+<?php
+
+return [
+    // admin/document-templates/index.blade.php
+    'page_title' => 'Templat Dokumen',
+    'intro_note' => 'Bagi setiap Vendor + Produk + Jenis Dokumen, tandakan medan yang biasanya terdapat pada dokumen tersebut — skrin Transaksi Jualan langsung menggunakan ini untuk menumpukan pembacaan automatiknya.',
+    'new_template_button' => '+ Templat Dokumen Baharu',
+    'viewing_matched_note' => '📄 Melihat templat yang sepadan untuk :product.',
+    'show_all_templates_link' => 'Tunjukkan semua templat',
+    'col_template_name' => 'Nama Templat',
+    'col_document_type' => 'Jenis Dokumen',
+    'col_version' => 'Versi',
+    'created_by_date_note' => 'oleh :name · :date',
+    'versions_count_link' => ':count versi',
+    'new_version_link' => 'Versi Baharu',
+    'deactivate_button' => 'Nyahaktifkan',
+    'activate_button' => 'Aktifkan',
+    'any_product_word' => 'Sebarang produk',
+    'this_product_word' => 'produk ini',
+
+    // admin/document-templates/form.blade.php
+    'new_version_page_title' => 'Versi Baharu',
+    'edit_template_page_title' => 'Edit Templat Dokumen',
+    'new_template_page_title' => 'Templat Dokumen Baharu',
+    'intro_field_note' => 'Beritahu sistem medan yang biasanya terdapat pada dokumen vendor ini — skrin Transaksi Jualan langsung menggunakan senarai ini untuk menumpukan pembacaan automatiknya. Tiada muat naik sampel atau pelabelan diperlukan; hanya tandakan yang berkenaan di bawah.',
+    'creating_version_note' => 'Mencipta versi :number bagi ":name". Versi :prev kekal dalam sejarah.',
+    'vendor_label' => 'Vendor *',
+    'product_label' => 'Produk (biarkan kosong untuk sepadan dengan mana-mana produk bagi vendor ini)',
+    'product_search_placeholder' => 'Taip untuk mencari...',
+    'no_products_found_note' => 'Tiada produk dijumpai untuk vendor ini.',
+    'document_type_label' => 'Jenis Dokumen *',
+    'template_name_label' => 'Nama Templat *',
+    'template_name_placeholder' => 'cth. Pacific & Orient - Jadual Polisi Motor',
+    'created_by_on_version_note' => 'Dicipta oleh :name pada :date · versi :version',
+    'which_fields_heading' => 'Medan mana yang terdapat pada dokumen ini? (tandakan semua yang berkenaan)',
+    'cancel_link' => '← Batal',
+    'save_new_version_button' => 'Simpan Versi Baharu',
+    'update_template_button' => 'Kemas Kini Templat',
+    'save_template_button' => 'Simpan Templat',
+
+    // admin/document-templates/history.blade.php
+    'version_history_page_title' => 'Sejarah Versi Templat',
+    'every_version_note' => 'Setiap versi yang pernah ditentukur untuk :template — :vendor / :product / :doctype. Hanya satu versi aktif (digunakan untuk muat naik akan datang) pada satu masa.',
+    'back_to_list_link' => 'Kembali ke senarai',
+    'version_label' => 'Versi :number',
+    'active_used_now_badge' => 'Aktif — digunakan sekarang',
+    'retired_badge' => 'Dihentikan',
+    'created_by_on_note' => 'Dicipta oleh :name pada :date',
+    'retired_on_suffix' => '· Dihentikan :date',
+    'looks_for_suffix' => '— mencari ":text"',
+    'reactivate_button' => 'Aktifkan semula versi ini',
+    'view_edit_link' => 'Lihat / edit',
+];

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeneralLink – Agent Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; font-family: 'Outfit', sans-serif; overflow: hidden; }
+        body { display: flex; height: 100vh; background: #e0f7fa; }
+
+        .left-panel {
+            flex: 0 0 32%;
+            background: linear-gradient(160deg, #e0f7fa 0%, #b2ebf2 40%, #e0f2f1 100%);
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: center; padding: 1.5rem 1.5rem; gap: .8rem;
+            height: 100vh;
+        }
+        .logo-img { width: 100%; border-radius: 14px; box-shadow: 0 6px 24px rgba(0,131,143,0.2); display: block; }
+        .left-title { font-family: 'Rajdhani', sans-serif; font-size: 1.3rem; font-weight: 700; color: #0D5A8E; text-align: center; }
+        .left-sub { font-size: .72rem; color: #0D5A8E; text-align: center; line-height: 1.4; }
+        .info-box { background: rgba(255,255,255,0.8); border-radius: 8px; padding: .5rem .8rem; font-size: .68rem; color: #0D5A8E; line-height: 1.4; width: 100%; border-left: 3px solid #1B9AE4; }
+        .signin-link { font-size: .72rem; color: #718096; }
+        .signin-link a { color: #0D5A8E; font-weight: 700; text-decoration: none; }
+
+        .right-panel { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 1rem 1.8rem; background: #fff; height: 100vh; overflow: hidden; }
+
+        h1 { font-family: 'Rajdhani', sans-serif; font-size: 1.6rem; font-weight: 700; color: #0D5A8E; margin-bottom: .1rem; }
+        .subtitle { font-size: .75rem; color: #38A169; font-weight: 500; margin-bottom: .6rem; }
+
+        .alert-error { background: #fde8e8; border-left: 3px solid #e53935; border-radius: 6px; padding: .4rem .8rem; font-size: .74rem; color: #b71c1c; margin-bottom: .6rem; }
+
+        /* Upline section */
+        .upline-section { background: #f0f9ff; border-radius: 8px; padding: .6rem .9rem; margin-bottom: .6rem; border: 2px solid #1B9AE4; }
+        .upline-title { font-size: .74rem; font-weight: 700; color: #0D5A8E; margin-bottom: .5rem; display: flex; align-items: center; gap: .4rem; }
+        .upline-badge { background: #1B9AE4; color: #fff; border-radius: 20px; padding: .1rem .6rem; font-size: .6rem; font-weight: 600; }
+        .upline-row { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+
+        .lookup-result { margin-top: .3rem; padding: .4rem .7rem; border-radius: 5px; font-size: .7rem; display: none; }
+        .lookup-result.found { background: #e8f5e9; border-left: 3px solid #38A169; color: #1b5e20; display: block; }
+        .lookup-result.error { background: #fde8e8; border-left: 3px solid #e53935; color: #b71c1c; display: block; }
+        .lookup-result.searching { background: #e3f2fd; border-left: 3px solid #1B9AE4; color: #0D5A8E; display: block; }
+        .lookup-name { font-weight: 700; }
+        .lookup-role { display: inline-block; background: #1B9AE4; color: #fff; border-radius: 20px; padding: .08rem .45rem; font-size: .6rem; font-weight: 600; margin-left: .3rem; }
+        .lookup-status { display: inline-block; background: #38A169; color: #fff; border-radius: 20px; padding: .08rem .45rem; font-size: .6rem; font-weight: 600; margin-left: .2rem; }
+
+        .admin-assign-box { background: #fff8e1; border-radius: 6px; padding: .4rem .7rem; border-left: 3px solid #D97706; font-size: .7rem; color: #92400e; margin-top: .4rem; display: none; }
+        .admin-assign-box.show { display: block; }
+
+        /* Section label */
+        .section-label { font-size: .65rem; font-weight: 700; color: #0D5A8E; letter-spacing: .06em; text-transform: uppercase; margin: .5rem 0 .4rem; padding-bottom: .25rem; border-bottom: 1.5px solid #b2ebf2; }
+
+        /* Grids */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem .9rem; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .5rem .9rem; }
+        .col-full { grid-column: 1 / -1; }
+
+        label { display: block; font-size: .68rem; font-weight: 600; color: #2D3748; margin-bottom: .18rem; }
+        label span.req { color: #e53935; margin-left: 1px; }
+
+        input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+            width: 100%; padding: .42rem .7rem;
+            border: 1.5px solid #b2ebf2; border-radius: 7px;
+            font-size: .78rem; font-family: 'Outfit', sans-serif;
+            color: #2D3748; background: #f7fdff; outline: none;
+            transition: border-color .2s, box-shadow .2s;
+        }
+        textarea { resize: none; height: 52px; }
+        input:focus, select:focus, textarea:focus { border-color: #1B9AE4; background: #fff; box-shadow: 0 0 0 2px rgba(27,154,228,.10); }
+
+        .field-hint { font-size: .6rem; color: #718096; margin-top: .15rem; }
+        .error-msg { font-size: .62rem; color: #e53935; margin-top: .15rem; }
+
+        .btn-submit {
+            width: 100%; padding: .65rem;
+            background: linear-gradient(90deg, #1B9AE4 0%, #0D5A8E 100%);
+            color: #fff; border: none; border-radius: 8px;
+            font-size: .82rem; font-family: 'Outfit', sans-serif;
+            font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+            cursor: pointer; box-shadow: 0 4px 12px rgba(13,90,142,.22);
+            margin-top: .5rem;
+        }
+        .btn-submit:hover { opacity: .93; }
+        .form-footer { text-align: center; margin-top: .4rem; font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: #b0bec5; }
+    </style>
+</head>
+<body>
+
+<!-- LEFT -->
+<div class="left-panel">
+    <img class="logo-img" src="{{ asset('images/generallink-logo.jpg') }}" alt="GeneralLink" />
+    <div class="left-title">Agent Registration</div>
+    <div class="left-sub">Complete your details to join the GeneralLink ecosystem</div>
+    <div class="info-box">● After submitting, a verification email will be sent. You will create your password after email verification.</div>
+    <div class="signin-link">Already have an account? <a href="{{ route('auth.login') }}">Sign in here</a></div>
+</div>
+
+<!-- RIGHT -->
+<div class="right-panel">
+    <h1>Create Account</h1>
+    <p class="subtitle">Join the GeneralLink Digital Affiliate Ecosystem</p>
+
+    @if ($errors->any())
+    <div class="alert-error">
+        @foreach ($errors->all() as $error) {{ $error }}<br> @endforeach
+    </div>
+    @endif
+
+    <form method="POST" action="{{ route('auth.register.post') }}">
+        @csrf
+
+        <!-- STEP 1 — UPLINE -->
+        <div class="upline-section">
+            <div class="upline-title">🔗 Step 1 — Who do you belong to? <span class="upline-badge">Select First</span></div>
+            <div class="upline-row">
+                <div>
+                    <label>Upline Type <span class="req">*</span></label>
+                    <select id="upline_type" name="upline_type" required onchange="handleUplineChange(this.value)">
+                        <option value="">-- Please select --</option>
+                        <option value="GROUP_LEADER"  {{ old('upline_type')=='GROUP_LEADER'  ?'selected':'' }}>Group Leader</option>
+                        <option value="TEAM_LEADER"   {{ old('upline_type')=='TEAM_LEADER'   ?'selected':'' }}>Team Leader</option>
+                        <option value="INTRODUCER"    {{ old('upline_type')=='INTRODUCER'    ?'selected':'' }}>Introducer</option>
+                        <option value="ADMIN_ASSIGN"  {{ old('upline_type')=='ADMIN_ASSIGN'  ?'selected':'' }}>Admin Assign</option>
+                    </select>
+                    @error('upline_type') <div class="error-msg">{{ $message }}</div> @enderror
+                </div>
+                <div id="affiliate-code-field" style="display:none;">
+                    <label>Affiliate Code <span class="req">*</span></label>
+                    <input type="text" id="affiliate_code" name="upline_affiliate_code"
+                        value="{{ old('upline_affiliate_code') }}"
+                        placeholder="e.g. C0001-0-1"
+                        oninput="debounceLookup(this.value)" autocomplete="off" />
+                    <div class="field-hint">Min 4 chars — name appears automatically</div>
+                    @error('upline_affiliate_code') <div class="error-msg">{{ $message }}</div> @enderror
+                </div>
+            </div>
+            <div class="lookup-result" id="lookup-result"></div>
+            <div class="admin-assign-box" id="admin-assign-box">⚠ Your registration will be reviewed and assigned by our Admin team. You will be notified once assigned.</div>
+            <input type="hidden" name="upline_agent_id" id="upline_agent_id" value="{{ old('upline_agent_id') }}" />
+        </div>
+
+        <!-- STEP 2 — PERSONAL DETAILS -->
+        <div class="section-label">Step 2 — Personal Details</div>
+        <div class="grid-3">
+            <div>
+                <label>Full Name <span class="req">*</span></label>
+                <input type="text" name="name" value="{{ old('name') }}" placeholder="As per NRIC / MyKad" required />
+                <div class="field-hint">As per IC — letters and spaces only</div>
+                @error('name') <div class="error-msg">{{ $message }}</div> @enderror
+            </div>
+            <div>
+                <label>NRIC / MyKad Number <span class="req">*</span></label>
+                <input type="text" name="nric" value="{{ old('nric') }}" placeholder="e.g. 900101-10-1234" required />
+                <div class="field-hint">Format: 123456-78-9012</div>
+                @error('nric') <div class="error-msg">{{ $message }}</div> @enderror
+            </div>
+            <div>
+                <label>Mobile Phone Number <span class="req">*</span></label>
+                <input type="tel" name="phone" value="{{ old('phone') }}" placeholder="e.g. 012-3456789" required />
+                <div class="field-hint">Malaysia mobile e.g. 012-3456789</div>
+                @error('phone') <div class="error-msg">{{ $message }}</div> @enderror
+            </div>
+            <div>
+                <label>Email Address <span class="req">*</span></label>
+                <input type="email" name="email" value="{{ old('email') }}" placeholder="your@email.com" required />
+                @error('email') <div class="error-msg">{{ $message }}</div> @enderror
+            </div>
+            <div class="col-full" style="grid-column: 2 / 4;">
+                <label>Full Address <span class="req">*</span></label>
+                <textarea name="address" placeholder="Your full home address" required>{{ old('address') }}</textarea>
+                @error('address') <div class="error-msg">{{ $message }}</div> @enderror
+            </div>
+        </div>
+
+        <!-- STEP 3 — BANK DETAILS -->
+        <div class="section-label">Step 3 — Bank Details</div>
+        <div class="grid-2">
+            <div>
+                <label>Bank Name <span class="req">*</span></label>
+                <select name="bank_name" required>
+                    <option value="">-- Select Bank --</option>
+                    @foreach(['Maybank','CIMB Bank','Public Bank','RHB Bank','Hong Leong Bank','AmBank','Bank Islam','Bank Rakyat','BSN','OCBC Bank','UOB Bank','Standard Chartered','HSBC Bank','Alliance Bank','Affin Bank'] as $bank)
+                        <option value="{{ $bank }}" {{ old('bank_name')==$bank?'selected':'' }}>{{ $bank }}</option>
+                    @endforeach
+                </select>
+                @error('bank_name') <div class="error-msg">{{ $message }}</div> @enderror
+            </div>
+            <div>
+                <label>Bank Account Number <span class="req">*</span></label>
+                <input type="text" name="bank_account" value="{{ old('bank_account') }}" placeholder="e.g. 1234567890" required />
+                <div class="field-hint">Numbers only, 5–20 digits</div>
+                @error('bank_account') <div class="error-msg">{{ $message }}</div> @enderror
+            </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Registration</button>
+    </form>
+
+    <div class="form-footer">AI-POWERED · MALAYSIA · SOUTHEAST ASIA</div>
+</div>
+
+<script>
+let debounceTimer = null;
+
+function handleUplineChange(value) {
+    const codeField = document.getElementById('affiliate-code-field');
+    const adminBox  = document.getElementById('admin-assign-box');
+    const result    = document.getElementById('lookup-result');
+    const agentId   = document.getElementById('upline_agent_id');
+    result.className = 'lookup-result'; result.innerHTML = ''; agentId.value = '';
+    if (value === 'ADMIN_ASSIGN') { codeField.style.display = 'none'; adminBox.classList.add('show'); }
+    else if (value === '') { codeField.style.display = 'none'; adminBox.classList.remove('show'); }
+    else { codeField.style.display = 'block'; adminBox.classList.remove('show'); document.getElementById('affiliate_code').value = ''; document.getElementById('affiliate_code').focus(); }
+}
+
+function debounceLookup(value) {
+    clearTimeout(debounceTimer);
+    const result = document.getElementById('lookup-result');
+    const agentId = document.getElementById('upline_agent_id');
+    agentId.value = '';
+    if (value.trim().length < 4) { result.className = 'lookup-result'; result.innerHTML = ''; return; }
+    result.className = 'lookup-result searching'; result.innerHTML = '🔍 Searching...';
+    debounceTimer = setTimeout(() => { lookupAffiliate(value.trim()); }, 500);
+}
+
+function lookupAffiliate(code) {
+    const uplineType = document.getElementById('upline_type').value;
+    const result     = document.getElementById('lookup-result');
+    const agentId    = document.getElementById('upline_agent_id');
+    fetch(`{{ route('affiliate.lookup') }}?code=${encodeURIComponent(code)}&type=${uplineType}`, {
+        headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json' }
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            agentId.value = data.agent.id;
+            result.className = 'lookup-result found';
+            result.innerHTML = `✅ <span class="lookup-name">${data.agent.name}</span> <span class="lookup-role">${data.agent.role_label}</span> <span class="lookup-status">ACTIVE</span> <small style="color:#546e7a;margin-left:.5rem;">Code: ${data.agent.affiliate_code}</small>`;
+        } else {
+            agentId.value = '';
+            result.className = 'lookup-result error';
+            result.innerHTML = `❌ ${data.message}`;
+        }
+    })
+    .catch(() => { agentId.value = ''; result.className = 'lookup-result error'; result.innerHTML = '❌ Unable to verify. Please try again.'; });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const uplineType = document.getElementById('upline_type').value;
+    if (uplineType) handleUplineChange(uplineType);
+    const code = document.getElementById('affiliate_code')?.value;
+    if (code && code.length >= 4) lookupAffiliate(code);
+});
+</script>
+</body>
+</html>

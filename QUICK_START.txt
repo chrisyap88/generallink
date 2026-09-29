@@ -1,0 +1,91 @@
+=====================================================
+  GeneralLink - Quick Start (3 Steps Only)
+=====================================================
+
+BEFORE YOU START - Install these if you haven't:
+  1. XAMPP   → https://www.apachefriends.org  (choose Windows, PHP 8.2+)
+  2. Composer → https://getcomposer.org/Composer-Setup.exe
+
+=====================================================
+STEP 1 - Copy this folder to XAMPP
+=====================================================
+
+Copy the entire "generallink" folder to:
+  C:\xampp\htdocs\generallink
+
+So the result is:
+  C:\xampp\htdocs\generallink\INSTALL.bat
+  C:\xampp\htdocs\generallink\composer.json
+  C:\xampp\htdocs\generallink\... (all other files)
+
+=====================================================
+STEP 2 - Create the database
+=====================================================
+
+  1. Open XAMPP Control Panel (search "XAMPP" in Start menu)
+  2. Click START next to Apache
+  3. Click START next to MySQL
+  4. Open your browser, go to: http://localhost/phpmyadmin
+  5. Click "New" on the LEFT sidebar
+  6. Type database name: generallink
+  7. Choose collation: utf8mb4_unicode_ci
+  8. Click the "Create" button
+
+=====================================================
+STEP 3 - Run the installer
+=====================================================
+
+  1. Go to: C:\xampp\htdocs\generallink\
+  2. Double-click: INSTALL.bat
+  3. Wait for it to finish (about 3-5 minutes)
+  4. When it asks "Have you created the database?" type: yes
+  5. Press Enter
+  6. When done, it opens the server automatically
+
+  Open your browser and go to:
+  http://127.0.0.1:8000
+
+=====================================================
+LOGIN DETAILS
+=====================================================
+
+  ADMIN LOGIN
+  Email:    admin@generallink.my
+  Password: Admin@12345
+
+  GROUP LEADER LOGIN
+  Email:    chrisyap@generallink.my
+  Password: Password@123
+
+  TEAM LEADER LOGIN
+  Email:    ahmad.razif@generallink.my
+  Password: Password@123
+
+NOTE: The first time you login, the system will ask
+you to set a "security phrase". Just type any phrase
+you can remember, for example: myfirstlogin
+
+=====================================================
+NEXT TIME - Start the server
+=====================================================
+
+After the first install, just double-click START.bat
+to start the server next time.
+
+=====================================================
+IF SOMETHING GOES WRONG
+=====================================================
+
+Error: "php not found"
+→ Open XAMPP, click Config next to Apache
+→ Go to Environment, add C:\xampp\php to PATH
+
+Error: "Table already exists"  
+→ Open INSTALL.bat with Notepad
+→ Change "migrate:fresh" - it will wipe and redo
+
+Error: White page or 500 error
+→ Open: C:\xampp\htdocs\generallink\storage\logs\laravel.log
+→ Read the last few lines to see what went wrong
+
+=====================================================

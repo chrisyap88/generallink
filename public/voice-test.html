@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carolyn — Voice Tester</title>
+<style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',Arial,sans-serif;background:#e0f7fa;min-height:100vh;padding:24px;color:#2D3748;}
+    .wrap{max-width:660px;margin:0 auto;background:#fff;border-radius:14px;box-shadow:0 4px 20px rgba(0,0,0,.12);padding:22px 26px;}
+    h1{font-size:18px;color:#0D5A8E;margin-bottom:4px;}
+    .sub{font-size:12.5px;color:#718096;margin-bottom:18px;}
+    label{display:block;font-size:12px;font-weight:600;color:#4A5568;margin-bottom:4px;margin-top:14px;}
+    textarea{width:100%;padding:8px 10px;border:1.5px solid #b2ebf2;border-radius:8px;font-size:13px;font-family:inherit;background:#f7fdff;resize:vertical;min-height:60px;}
+    .row{display:flex;gap:14px;}
+    .row > div{flex:1;}
+    input[type=range]{width:100%;accent-color:#1B9AE4;}
+    .val{font-size:11px;color:#718096;}
+    .list{margin-top:10px;}
+    .voice-card{border:1.5px solid #E2E8F0;border-radius:10px;padding:10px 12px;margin-bottom:8px;}
+    .voice-card.picked{border-color:#38A169;background:#e8f5e9;}
+    .voice-top{display:flex;align-items:center;justify-content:space-between;}
+    .voice-name{font-size:13px;font-weight:700;color:#0D5A8E;}
+    .voice-tags{font-size:10.5px;color:#9ca3af;margin-top:2px;}
+    .voice-btns{display:flex;gap:6px;}
+    button{cursor:pointer;border:none;border-radius:8px;padding:7px 12px;font-size:11.5px;font-weight:700;font-family:inherit;}
+    .btn-sample{background:#f3f4f6;color:#4A5568;}
+    .btn-try{background:#1565C0;color:#fff;}
+    .btn-pick{background:#38A169;color:#fff;}
+    .btn-save{background:linear-gradient(90deg,#1B9AE4,#0D5A8E);color:#fff;padding:10px 18px;font-size:13px;}
+    .note{background:#FFF8E1;border-left:3px solid #F57F17;padding:8px 12px;font-size:11.5px;border-radius:6px;margin-top:16px;color:#7a5c00;}
+    .error{background:#fde8e8;border-left:3px solid #e53935;color:#b71c1c;padding:10px 12px;font-size:12px;border-radius:6px;margin-top:12px;}
+    .saved-flag{display:none;margin-top:12px;background:#e8f5e9;color:#1b5e20;padding:8px 12px;border-radius:8px;font-size:12px;font-weight:600;}
+    .loading{font-size:12.5px;color:#718096;padding:14px 0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <h1>🐰 Carolyn — Voice Tester (ElevenLabs)</h1>
+    <div class="sub">These are the real voices on your ElevenLabs account. "▶ Sample" plays ElevenLabs' free built-in preview (no quota used). "🎤 Try my line" speaks the text below in that voice (uses a little of your monthly quota).</div>
+
+    <label>Sample line</label>
+    <textarea id="sampleText">Hi, my name is Carolyn! I'm your AI-powered agent, and I'm so happy and blessed to assist you today! Welcome to GeneralLink — Where Connections Thrive and Success Grows.</textarea>
+
+    <label>Speed: <span id="speedVal" class="val">1.0</span></label>
+    <input type="range" id="speed" min="0.7" max="1.2" step="0.05" value="1.0">
+
+    <div class="list" id="voiceList"><div class="loading">Loading your ElevenLabs voices…</div></div>
+
+    <div id="currentPick" style="text-align:center; font-size:13px; font-weight:700; color:#0D5A8E; margin-top:14px;">No voice selected yet — click "✓ Select" on one below.</div>
+    <div style="margin-top:10px; text-align:center;">
+        <button class="btn-save" onclick="saveDefault()">💾 Save selected voice as Carolyn's default</button>
+    </div>
+    <div class="saved-flag" id="savedFlag">✅ Saved! Refresh the login page or dashboard and click the bunny to hear Carolyn in this voice.</div>
+
+    <div class="note">Free preview clips don't use your ElevenLabs quota. "Try my line" and the live assistant do use it (10,000 free characters/month, then paid tiers). If ElevenLabs ever runs out of quota or is unreachable, Carolyn automatically falls back to your computer's built-in voice so she never goes silent.</div>
+</div>
+
+<script>
+var voices = [];
+var selectedVoiceId = null;
+var currentAudio = null;
+
+function playUrl(url) {
+    if (currentAudio) { try { currentAudio.pause(); } catch(e){} }
+    currentAudio = new Audio(url);
+    currentAudio.play();
+}
+
+function loadVoices() {
+    fetch('/generallink/public/api/ai-assistant/voices')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            var list = document.getElementById('voiceList');
+            if (data.status !== 'OK') {
+                list.innerHTML = '<div class="error">Couldn\'t load voices: ' + (data.message || 'unknown error') + '</div>';
+                return;
+            }
+            voices = data.voices || [];
+            if (!voices.length) {
+                list.innerHTML = '<div class="error">No voices found on this ElevenLabs account yet.</div>';
+                return;
+            }
+            renderVoices();
+        })
+        .catch(function() {
+            document.getElementById('voiceList').innerHTML = '<div class="error">Couldn\'t reach the server to load voices. Make sure the app is running and try refreshing this page.</div>';
+        });
+}
+
+function renderVoices() {
+    var list = document.getElementById('voiceList');
+    list.innerHTML = '';
+    voices.forEach(function(v) {
+        var accent = (v.labels && (v.labels.accent || v.labels.language)) ? (v.labels.accent || v.labels.language) : '';
+        var gender = (v.labels && v.labels.gender) ? v.labels.gender : '';
+        var card = document.createElement('div');
+        card.className = 'voice-card';
+        card.id = 'card-' + v.voice_id;
+        card.innerHTML =
+            '<div class="voice-top">' +
+                '<div><div class="voice-name">' + v.name + '</div><div class="voice-tags">' + [accent, gender].filter(Boolean).join(' · ') + '</div></div>' +
+                '<div class="voice-btns">' +
+                    (v.preview_url ? '<button class="btn-sample" onclick="playUrl(\'' + v.preview_url + '\')">▶ Sample</button>' : '') +
+                    '<button class="btn-try" onclick="tryLine(\'' + v.voice_id + '\')">🎤 Try my line</button>' +
+                    '<button class="btn-pick" onclick="pickVoice(\'' + v.voice_id + '\')">✓ Select</button>' +
+                '</div>' +
+            '</div>';
+        list.appendChild(card);
+    });
+}
+
+function pickVoice(voiceId) {
+    selectedVoiceId = voiceId;
+    document.querySelectorAll('.voice-card').forEach(function(c) { c.classList.remove('picked'); });
+    document.getElementById('card-' + voiceId).classList.add('picked');
+    var v = voices.find(function(x) { return x.voice_id === voiceId; });
+    document.getElementById('currentPick').textContent = '✓ Currently selected: ' + (v ? v.name : voiceId) + ' — click Save below to lock this in.';
+}
+
+function tryLine(voiceId) {
+    // FIX 3 Aug 2026 — this used to also call pickVoice(voiceId), which
+    // meant just previewing a voice silently changed what would get
+    // saved. Previewing and selecting are now separate: only the green
+    // "Select" button changes your actual choice.
+    var text = document.getElementById('sampleText').value;
+    var speed = parseFloat(document.getElementById('speed').value);
+    fetch('/generallink/public/api/ai-assistant/preview-speak', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({text: text, voice_id: voiceId, speed: speed})
+    })
+    .then(function(r) {
+        var ct = r.headers.get('Content-Type') || '';
+        if (!r.ok || ct.indexOf('audio') === -1) { return r.json().then(function(d){ throw new Error(d.message || 'failed'); }); }
+        return r.blob();
+    })
+    .then(function(blob) { playUrl(URL.createObjectURL(blob)); })
+    .catch(function(e) { alert('Could not generate speech: ' + e.message); });
+}
+
+function saveDefault() {
+    if (!selectedVoiceId) { alert('Click "✓ Select" on a voice first.'); return; }
+    var speed = parseFloat(document.getElementById('speed').value);
+
+    // Saved on the SERVER (not just this browser) so it applies no
+    // matter how the app is opened later — fixes the "different voice"
+    // problem caused by localhost vs 127.0.0.1 being separate origins.
+    fetch('/generallink/public/api/ai-assistant/set-default-voice', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({voice_id: selectedVoiceId, speed: speed})
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.status !== 'OK') { alert('Could not save: ' + (data.message || 'unknown error')); return; }
+        var v = voices.find(function(x) { return x.voice_id === selectedVoiceId; });
+        var flag = document.getElementById('savedFlag');
+        flag.textContent = '✅ Saved ' + (v ? v.name : 'this voice') + ' as Carolyn\'s default! Refresh the login page or dashboard and click the bunny to hear her.';
+        flag.style.display = 'block';
+        setTimeout(function(){ flag.style.display = 'none'; }, 9000);
+    })
+    .catch(function() { alert('Could not reach the server to save this. Please try again.'); });
+}
+
+document.getElementById('speed').addEventListener('input', function() {
+    document.getElementById('speedVal').textContent = this.value;
+});
+
+loadVoices();
+</script>
+</body>
+</html>

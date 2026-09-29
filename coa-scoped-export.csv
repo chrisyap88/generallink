@@ -1,0 +1,27 @@
+account_id,account_code,account_name,account_type,parent_account_id,group_label_id,cbe_node_id,is_posting_account,is_active,is_system,display_order
+57dcaa51-750d-4e40-9f4f-ccc15d862102,1000,"Cash / Bank",ASSET,,,,1,1,1,1000
+b2352f0f-3827-4571-8da4-2f2b11d40869,1200,"Accounts Receivable",ASSET,,,,1,1,1,1200
+9142049d-0727-43ad-a9ae-1362100584b9,1250,"Pledges Receivable",ASSET,,,,1,1,1,1250
+9779b877-3eb5-457b-8fb2-f04621e82392,1700,"Fixed Assets",ASSET,,,,1,1,1,1700
+206c6a19-440b-4646-b7ca-4e803d291bad,1701,"Accumulated Depreciation",ASSET,,,,1,1,1,1701
+34070861-f1fb-4ceb-ba60-7f0c1c023a3f,2000,"Accounts Payable",LIABILITY,,,,1,1,1,2000
+f6d000c9-b432-4860-8fd3-6ab05b17eeb9,3000,"Fund Balance",EQUITY,,,,1,1,1,3000
+9f0ed7c0-62b4-4200-92d4-596428df5144,4900,"Bank Interest Income",INCOME,,,,1,1,1,4900
+072be928-e453-48c4-8494-c5fc043fdfe3,4999,"Uncategorised Income",INCOME,,,,1,1,1,4999
+9a7f9eec-d5a9-468b-8fdd-a07445e375ba,5900,"Depreciation Expense",EXPENSE,,,,1,1,1,5900
+68eee5fe-d53a-4a76-9e48-bf09ffb03acc,5901,"Gain/Loss on Disposal of Assets",EXPENSE,,,,1,1,1,5901
+99bd8eb1-48aa-4432-be48-d9619adc3662,5902,"Bank Charges",EXPENSE,,,,1,1,1,5902
+f6c611c7-9680-4aa5-bfac-675dd1ae8f6b,5999,"Uncategorised Expense",EXPENSE,,,,1,1,1,5999
+dd81be68-1427-433e-bdc4-361cf806d43e,1000,"Cash / Bank",ASSET,,e3851037-933a-46f2-83d2-4c99d88bbdca,,1,1,1,1000
+78a76044-aeeb-41ec-8487-9002f9146180,1200,"Accounts Receivable",ASSET,,e3851037-933a-46f2-83d2-4c99d88bbdca,,1,1,1,1200
+09933e16-04b5-43b8-8c42-b107aaa0937f,1250,"Pledges Receivable",ASSET,,e3851037-933a-46f2-83d2-4c99d88bbdca,,1,1,1,1250
+ec8149fb-04e7-47f5-b1d4-64b0fbca274c,1700,"Fixed Assets",ASSET,,e3851037-933a-46f2-83d2-4c99d88bbdca,,1,1,1,1700
+a375ab19-5c70-46e2-8e09-dcd9cbe3a334,1701,"Accumulated Depreciation",ASSET,,e3851037-933a-46f2-83d2-4c99d88bbdca,,1,1,1,1701
+f5962c67-4d48-41d6-8a45-32784e0e3f2e,2000,"Accounts Payable",LIABILITY,,e3851037-933a-46f2-83d2-4c99d88bbdca,,1,1,1,2000
+8d82b0bd-34f9-4f1c-8b21-4fd2bb2da604,3000,"Fund Balance",EQUITY,,e3851037-933a-46f2-83d2-4c99d88bbdca,,1,1,1,3000
+6492694b-1752-4717-933a-226e70a93f52,4900,"Bank Interest Income",INCOME,,e3851037-933a-46f2-83d2-4c99d88bbdca,,1,1,1,4900
+506b6057-c8ea-4c06-a83f-96ba4e9847f8,4999,"Uncategorised Income",INCOME,,e3851037-933a-46f2-83d2-4c99d88bbdca,,1,1,1,4999
+00ee084e-d644-4454-b8e4-dbdcdb8198e5,5900,"Depreciation Expense",EXPENSE,,e3851037-933a-46f2-83d2-4c99d88bbdca,,1,1,1,5900
+8250fac6-208b-4645-b50c-ac055d38bf59,5901,"Gain/Loss on Disposal of Assets",EXPENSE,,e3851037-933a-46f2-83d2-4c99d88bbdca,,1,1,1,5901
+9e6dd8c2-3046-4380-9f15-1e30921c858b,5902,"Bank Charges",EXPENSE,,e3851037-933a-46f2-83d2-4c99d88bbdca,,1,1,1,5902
+59d3324c-a2c6-46c6-b6a7-e81e42c61efe,5999,"Uncategorised Expense",EXPENSE,,e3851037-933a-46f2-83d2-4c99d88bbdca,,1,1,1,5999

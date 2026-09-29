@@ -1,0 +1,267 @@
+account_id,account_code,account_name,account_type,parent_account_id,account_group_id,account_category_id,cbe_node_id,is_posting_account,is_control_account,is_active,is_system,display_order
+57dcaa51-750d-4e40-9f4f-ccc15d862102,1000,"Cash / Bank",ASSET,,,,,1,0,1,1,1000
+8c3accf4-acc4-46fd-a201-6009bac6916c,1000,"Cash / Bank",ASSET,,,,,1,0,1,1,1000
+c4eb14fd-920e-4e7b-bcc1-6d9ba9671ffb,1000,"Cash / Bank",ASSET,,,,,1,0,1,1,1000
+dd81be68-1427-433e-bdc4-361cf806d43e,1000,"Cash / Bank",ASSET,,,,,1,0,1,1,1000
+ef129f70-6d66-4308-9dc3-f6a33192d44c,1100,"Cash and Cash Equivalents",ASSET,,,,,1,1,1,0,1100
+a62e8c9e-dd04-479b-9207-dca2851ed24b,1110,"Entity Petty Cash",ASSET,ef129f70-6d66-4308-9dc3-f6a33192d44c,,,,1,0,1,0,1110
+5fb6993b-af2c-4718-864c-081a803b05a7,1120,"General Cash",ASSET,ef129f70-6d66-4308-9dc3-f6a33192d44c,,,,1,0,1,0,1120
+7a0b54f6-59b7-4989-9b19-33518a2efe0b,1130,"Event Cash",ASSET,ef129f70-6d66-4308-9dc3-f6a33192d44c,,,,1,0,1,0,1130
+55e06d4c-a101-4351-bd99-3f290d0579c6,1140,"Donation Box Cash",ASSET,ef129f70-6d66-4308-9dc3-f6a33192d44c,,,,1,0,1,0,1140
+72822e4c-d5c9-43f0-ab88-04c6e5c9434b,1150,"Offering Box Cash",ASSET,ef129f70-6d66-4308-9dc3-f6a33192d44c,,,,1,0,1,0,1150
+78a76044-aeeb-41ec-8487-9002f9146180,1200,"Accounts Receivable",ASSET,,,,,1,0,1,1,1200
+7f08fc29-3971-40ca-b9d2-06b796809783,1200,"Bank Accounts",ASSET,,,,,1,1,1,0,1200
+b2352f0f-3827-4571-8da4-2f2b11d40869,1200,"Accounts Receivable",ASSET,,,,,1,0,1,1,1200
+e1d07440-aad3-4f56-bc2d-a69357b6b99b,1210,"General Operating Bank Account",ASSET,7f08fc29-3971-40ca-b9d2-06b796809783,,,,1,0,1,0,1210
+fc4ab60d-dbbb-496e-84f0-df2d6061bb39,1220,"Event Bank Account",ASSET,7f08fc29-3971-40ca-b9d2-06b796809783,,,,1,0,1,0,1220
+bf87feac-92ab-4ea8-9bb1-5be51055b979,1230,"Building Fund Bank Account",ASSET,7f08fc29-3971-40ca-b9d2-06b796809783,,,,1,0,1,0,1230
+71243cfe-19ab-432c-9266-0f77e7cf0872,1240,"Charity Fund Bank Account",ASSET,7f08fc29-3971-40ca-b9d2-06b796809783,,,,1,0,1,0,1240
+09933e16-04b5-43b8-8c42-b107aaa0937f,1250,"Pledges Receivable",ASSET,,,,,1,0,1,1,1250
+9142049d-0727-43ad-a9ae-1362100584b9,1250,"Pledges Receivable",ASSET,,,,,1,0,1,1,1250
+96f365fe-c35b-4348-8201-d500ef9f44d0,1250,"Restricted Fund Bank Account",ASSET,7f08fc29-3971-40ca-b9d2-06b796809783,,,,1,0,1,0,1250
+ba9abf06-ff70-47c5-8f22-48e9df942a7c,1260,"Savings Account",ASSET,7f08fc29-3971-40ca-b9d2-06b796809783,,,,1,0,1,0,1260
+d1becd6a-920c-4083-8e1c-2a0678ef0df3,1270,"Fixed Deposit",ASSET,7f08fc29-3971-40ca-b9d2-06b796809783,,,,1,0,1,0,1270
+3c829efb-c7e4-4320-abaa-a6ebbc35c707,1280,"Payment Gateway Account",ASSET,7f08fc29-3971-40ca-b9d2-06b796809783,,,,1,0,1,0,1280
+f1fdb725-dd28-444f-a330-d785168dde86,1300,"Accounts Receivable",ASSET,,,,,1,1,1,0,1300
+9c7d2f97-4bd7-4073-80e8-0aaedcb03388,1310,"Service Receivables",ASSET,f1fdb725-dd28-444f-a330-d785168dde86,,,,1,0,1,0,1310
+41f30ba7-c5c8-42ac-a0dd-9f8cec3ca518,1320,"Donation Pledges Receivable",ASSET,f1fdb725-dd28-444f-a330-d785168dde86,,,,1,0,1,0,1320
+9ac79e4f-6666-44c0-b744-9227238bbb44,1330,"Rental Receivables",ASSET,f1fdb725-dd28-444f-a330-d785168dde86,,,,1,0,1,0,1330
+cf9cc776-1267-4122-9a5d-722e3a330b82,1340,"Other Receivables",ASSET,f1fdb725-dd28-444f-a330-d785168dde86,,,,1,0,1,0,1340
+3e52d57d-bc30-482c-9a79-18e42304ca5e,1350,"Staff Advance",ASSET,f1fdb725-dd28-444f-a330-d785168dde86,,,,1,0,1,0,1350
+b89004ea-1c91-40f8-bb3a-0dc5e4bd3c95,1360,"Deposit Receivable",ASSET,f1fdb725-dd28-444f-a330-d785168dde86,,,,1,0,1,0,1360
+192a3d27-9fea-4a32-b6c2-0b0e56a6826c,1400,Inventory,ASSET,,,,,1,1,1,0,1400
+7155c180-2d8c-45de-9cb4-b8785dc8c7ea,1410,"Incense Inventory",ASSET,192a3d27-9fea-4a32-b6c2-0b0e56a6826c,,,,1,0,1,0,1410
+98add120-2697-4aef-bec4-a9110d5f0c80,1420,"Candle Inventory",ASSET,192a3d27-9fea-4a32-b6c2-0b0e56a6826c,,,,1,0,1,0,1420
+8c26de42-39d3-4f40-ba6a-6009867359ed,1430,"Joss Paper Inventory",ASSET,192a3d27-9fea-4a32-b6c2-0b0e56a6826c,,,,1,0,1,0,1430
+f4f00eb4-b2a5-4754-86bc-251d99537fbf,1440,"Religious Items Inventory",ASSET,192a3d27-9fea-4a32-b6c2-0b0e56a6826c,,,,1,0,1,0,1440
+18f3a5c7-54ad-40fb-9d38-9bca886db677,1450,"Souvenir Inventory",ASSET,192a3d27-9fea-4a32-b6c2-0b0e56a6826c,,,,1,0,1,0,1450
+fb6b80c6-2cce-4127-a468-a5c705a56206,1460,"Books and Publications Inventory",ASSET,192a3d27-9fea-4a32-b6c2-0b0e56a6826c,,,,1,0,1,0,1460
+b65f16c4-a9dc-4260-981c-6a15546d74b9,1470,"Other Merchandise Inventory",ASSET,192a3d27-9fea-4a32-b6c2-0b0e56a6826c,,,,1,0,1,0,1470
+6c2772f6-63c1-4ad9-8e5c-90d3022a1f0f,1500,"Prepaid Expenses",ASSET,,,,,1,1,1,0,1500
+b26d3d41-9205-4f09-8834-726693f6c135,1510,"Prepaid Insurance",ASSET,6c2772f6-63c1-4ad9-8e5c-90d3022a1f0f,,,,1,0,1,0,1510
+377b1862-dcb6-4de9-a215-2846339f8dc2,1520,"Prepaid Rent",ASSET,6c2772f6-63c1-4ad9-8e5c-90d3022a1f0f,,,,1,0,1,0,1520
+4ac34203-1dc4-43a5-92b6-a9a7ad148515,1530,"Prepaid Software",ASSET,6c2772f6-63c1-4ad9-8e5c-90d3022a1f0f,,,,1,0,1,0,1530
+b4e185ca-57aa-48de-a9b7-0c531b0ea495,1540,"Prepaid Service Contracts",ASSET,6c2772f6-63c1-4ad9-8e5c-90d3022a1f0f,,,,1,0,1,0,1540
+7bb4476f-c898-4b61-9c2f-5368c6677cd7,1550,"Other Prepayments",ASSET,6c2772f6-63c1-4ad9-8e5c-90d3022a1f0f,,,,1,0,1,0,1550
+d6801a16-0cf7-4e71-ae0c-6e43472120df,1600,"Property and Equipment",ASSET,,,,,1,1,1,0,1600
+6997ee7e-2d5f-4174-9e14-5bc967721e5f,1610,Land,ASSET,d6801a16-0cf7-4e71-ae0c-6e43472120df,,,,1,0,1,0,1610
+2c9bb4f2-ff2c-41e0-89cf-053d0593e91f,1620,"Entity Buildings",ASSET,d6801a16-0cf7-4e71-ae0c-6e43472120df,,,,1,0,1,0,1620
+455e767c-57fc-403e-a452-928370f628be,1630,"Prayer Hall",ASSET,d6801a16-0cf7-4e71-ae0c-6e43472120df,,,,1,0,1,0,1630
+8a1471ca-5447-460b-9cc2-56f5f954013e,1640,"Ancillary Buildings",ASSET,d6801a16-0cf7-4e71-ae0c-6e43472120df,,,,1,0,1,0,1640
+409e7773-0605-408c-b53c-90e3fff3fdea,1650,Renovation,ASSET,d6801a16-0cf7-4e71-ae0c-6e43472120df,,,,1,0,1,0,1650
+448546c4-1280-4a2a-9ab1-cba4486c13d7,1660,"Furniture and Fixtures",ASSET,d6801a16-0cf7-4e71-ae0c-6e43472120df,,,,1,0,1,0,1660
+6cd9f1eb-6514-4de6-8225-cc295db5aa02,1670,"Office Equipment",ASSET,d6801a16-0cf7-4e71-ae0c-6e43472120df,,,,1,0,1,0,1670
+43cfb866-53be-4a75-902c-166ab832f2f1,1680,"Computer Equipment",ASSET,d6801a16-0cf7-4e71-ae0c-6e43472120df,,,,1,0,1,0,1680
+9391df2f-e44b-467d-b136-2f6fa93ad7a8,1690,"Network Equipment",ASSET,d6801a16-0cf7-4e71-ae0c-6e43472120df,,,,1,0,1,0,1690
+9779b877-3eb5-457b-8fb2-f04621e82392,1700,"Fixed Assets",ASSET,,,,,1,0,1,1,1700
+d256b73e-a4d1-4f06-8e82-69411b172fc0,1700,"CCTV and Security Equipment",ASSET,d6801a16-0cf7-4e71-ae0c-6e43472120df,,,,1,0,1,0,1700
+ec8149fb-04e7-47f5-b1d4-64b0fbca274c,1700,"Fixed Assets",ASSET,,,,,1,0,1,1,1700
+206c6a19-440b-4646-b7ca-4e803d291bad,1701,"Accumulated Depreciation",ASSET,,,,,1,0,1,1,1701
+a375ab19-5c70-46e2-8e09-dcd9cbe3a334,1701,"Accumulated Depreciation",ASSET,,,,,1,0,1,1,1701
+ec93b517-dda6-4db7-a3f4-45ec00f2e773,1710,"Air Conditioning Equipment",ASSET,d6801a16-0cf7-4e71-ae0c-6e43472120df,,,,1,0,1,0,1710
+0a5c80c8-9cef-41ef-8c45-229f9df1ca27,1720,"Sound System",ASSET,d6801a16-0cf7-4e71-ae0c-6e43472120df,,,,1,0,1,0,1720
+6d0036a4-a1e1-4e3c-98f6-c189fba9a39f,1730,"Religious Equipment",ASSET,d6801a16-0cf7-4e71-ae0c-6e43472120df,,,,1,0,1,0,1730
+5d715f8f-8033-4174-8b04-a5920eb9e353,1740,"Entity Furniture",ASSET,d6801a16-0cf7-4e71-ae0c-6e43472120df,,,,1,0,1,0,1740
+f848386e-6b70-4bf0-a17a-ac53278c43f8,1750,Vehicles,ASSET,d6801a16-0cf7-4e71-ae0c-6e43472120df,,,,1,0,1,0,1750
+7be3157b-cd72-482e-9de1-7bdb5475c4b5,1800,"Accumulated Depreciation",ASSET,,,,,1,1,1,0,1800
+116fb7f4-e512-4f6f-a5d8-676bd7af011a,1810,"Accumulated Depreciation - Buildings",ASSET,7be3157b-cd72-482e-9de1-7bdb5475c4b5,,,,1,0,1,0,1810
+aac99152-0499-48ed-bc8f-5117e73ed5e2,1820,"Accumulated Depreciation - Equipment",ASSET,7be3157b-cd72-482e-9de1-7bdb5475c4b5,,,,1,0,1,0,1820
+71eb0781-e96f-4242-bd62-8a179e734942,1830,"Accumulated Depreciation - Furniture",ASSET,7be3157b-cd72-482e-9de1-7bdb5475c4b5,,,,1,0,1,0,1830
+9c45ee55-b3d5-45f6-98e7-311dfdfd864a,1840,"Accumulated Depreciation - Vehicles",ASSET,7be3157b-cd72-482e-9de1-7bdb5475c4b5,,,,1,0,1,0,1840
+34070861-f1fb-4ceb-ba60-7f0c1c023a3f,2000,"Accounts Payable",LIABILITY,,,,,1,0,1,1,2000
+96ebf0eb-4c34-4ca1-85d3-efda00b558d1,2000,"Accounts Payable",LIABILITY,,,,,1,0,1,1,2000
+c0497ccd-d248-46ee-9b80-9e2ac44914df,2000,"Accounts Payable",LIABILITY,,,,,1,0,1,1,2000
+f5962c67-4d48-41d6-8a45-32784e0e3f2e,2000,"Accounts Payable",LIABILITY,,,,,1,0,1,1,2000
+99254008-b1d3-47a4-8546-d06de518677d,2100,"Accounts Payable",LIABILITY,,,,,1,1,1,0,2100
+d1accd57-5a85-4229-a8c1-5ba7f2fb3d2f,2110,"Supplier Payables",LIABILITY,99254008-b1d3-47a4-8546-d06de518677d,,,,1,0,1,0,2110
+4866274a-482f-42d7-abb3-02c175a27811,2120,"Contractor Payables",LIABILITY,99254008-b1d3-47a4-8546-d06de518677d,,,,1,0,1,0,2120
+68f6616d-17de-4f75-bee4-347b16488ad3,2130,"Priest / Monk Fees Payable",LIABILITY,99254008-b1d3-47a4-8546-d06de518677d,,,,1,0,1,0,2130
+b1dec0b0-50cd-49d0-a937-441b3fc07cb0,2140,"Other Payables",LIABILITY,99254008-b1d3-47a4-8546-d06de518677d,,,,1,0,1,0,2140
+9f4cf357-e25a-403a-b88c-db486ecd8641,2200,"Accrued Expenses",LIABILITY,,,,,1,1,1,0,2200
+cea1bdd4-67e0-43e5-ab41-6637b0cc9bd3,2210,"Accrued Utilities",LIABILITY,9f4cf357-e25a-403a-b88c-db486ecd8641,,,,1,0,1,0,2210
+2e6b4d42-3f15-4e0e-80c6-dcea2e82ea8e,2220,"Accrued Salaries",LIABILITY,9f4cf357-e25a-403a-b88c-db486ecd8641,,,,1,0,1,0,2220
+507bec72-550e-4251-98ee-9643b619bf56,2230,"Accrued Professional Fees",LIABILITY,9f4cf357-e25a-403a-b88c-db486ecd8641,,,,1,0,1,0,2230
+ae66d26c-ce88-4e9e-93e5-0c1bb18be6c8,2300,"Deposits Received",LIABILITY,,,,,1,1,1,0,2300
+5edafc5b-f4b4-454d-bc8f-2171a050ab46,2310,"Rental Deposits Received",LIABILITY,ae66d26c-ce88-4e9e-93e5-0c1bb18be6c8,,,,1,0,1,0,2310
+bf70d06e-96c1-487d-b1d4-c3802cc4665d,2320,"Event Deposits Received",LIABILITY,ae66d26c-ce88-4e9e-93e5-0c1bb18be6c8,,,,1,0,1,0,2320
+9368a823-546a-41dc-abe3-c32d3ca3f43c,2400,"Deferred Income",LIABILITY,,,,,1,1,1,0,2400
+4c9bddc5-6f01-44c1-9f70-902dceb72609,2410,"Advance Event Income",LIABILITY,9368a823-546a-41dc-abe3-c32d3ca3f43c,,,,1,0,1,0,2410
+dc1bd8fa-d4de-4629-9728-1fb4f6df8223,2420,"Advance Service Income",LIABILITY,9368a823-546a-41dc-abe3-c32d3ca3f43c,,,,1,0,1,0,2420
+213b6367-0ced-49ed-ae1c-5ee7175d3418,3000,"Fund Balance",EQUITY,,,,,1,0,1,1,3000
+8d82b0bd-34f9-4f1c-8b21-4fd2bb2da604,3000,"Fund Balance",EQUITY,,,,,1,0,1,1,3000
+d7899b82-7454-4435-ac0e-70cdd106dfca,3000,"Fund Balance",EQUITY,,,,,1,0,1,1,3000
+f6d000c9-b432-4860-8fd3-6ab05b17eeb9,3000,"Fund Balance",EQUITY,,,,,1,0,1,1,3000
+6cb01dab-15cf-4aee-a986-df9ee746bcd7,3100,"Net Assets Without Donor Restrictions",EQUITY,,,,,1,1,1,0,3100
+8c070f33-417e-40cb-99bf-1c92fbad08d5,3110,"General Entity Fund",EQUITY,6cb01dab-15cf-4aee-a986-df9ee746bcd7,,,,1,0,1,0,3110
+90bec211-9f13-424d-af7a-69ed0f0563a8,3120,"Operating Reserve Fund",EQUITY,6cb01dab-15cf-4aee-a986-df9ee746bcd7,,,,1,0,1,0,3120
+ddf5f2e9-34e1-466e-acbe-1ff989dbd109,3130,"Capital Reserve Fund",EQUITY,6cb01dab-15cf-4aee-a986-df9ee746bcd7,,,,1,0,1,0,3130
+f122bea3-4c8b-432f-a002-b0b08bac714d,3140,"Board Designated Fund",EQUITY,6cb01dab-15cf-4aee-a986-df9ee746bcd7,,,,1,0,1,0,3140
+c0585fe3-9144-4ef7-8653-637183e6127f,3200,"Net Assets With Donor Restrictions",EQUITY,,,,,1,1,1,0,3200
+278b5a8d-81cd-4627-871c-eefe04541030,3210,"Building Fund",EQUITY,c0585fe3-9144-4ef7-8653-637183e6127f,,,,1,0,1,0,3210
+113a7e08-4d4d-47dd-9aea-b0c529594280,3220,"Renovation Fund",EQUITY,c0585fe3-9144-4ef7-8653-637183e6127f,,,,1,0,1,0,3220
+3d442827-dc96-4502-bdc0-853a5b9f8f4d,3230,"Charity Fund",EQUITY,c0585fe3-9144-4ef7-8653-637183e6127f,,,,1,0,1,0,3230
+bd6b4614-075f-433c-a3da-3da2ad33c938,3240,"Education Fund",EQUITY,c0585fe3-9144-4ef7-8653-637183e6127f,,,,1,0,1,0,3240
+13c2b638-e944-49a1-b879-3f19262daad8,3250,"Religious Activity Fund",EQUITY,c0585fe3-9144-4ef7-8653-637183e6127f,,,,1,0,1,0,3250
+c8091f52-37d9-4144-8c39-63a6c479cb13,3260,"Memorial Fund",EQUITY,c0585fe3-9144-4ef7-8653-637183e6127f,,,,1,0,1,0,3260
+0541b105-9102-4589-9e78-340a643d36ce,3270,"Other Restricted Fund",EQUITY,c0585fe3-9144-4ef7-8653-637183e6127f,,,,1,0,1,0,3270
+9b03c628-f4bd-4f53-b476-7e98b91c88e9,3900,"Current Year Surplus / Deficit",EQUITY,,,,,1,0,1,0,3900
+d7983aac-db5e-4a3f-a075-522a6cd512d6,4050,"Membership Fee Income",INCOME,,,,,1,0,1,0,4050
+4386d5c8-a5bb-45ea-99d7-a4e71645064c,4100,"Donation Income",INCOME,,,,,1,1,1,0,4100
+01d2777d-d21b-49e7-9ab2-e248aa1e28a7,4110,"General Donations",INCOME,4386d5c8-a5bb-45ea-99d7-a4e71645064c,,,,1,0,1,0,4110
+0f699d00-714c-40ac-825b-450e69ebbfdd,4120,"Designated Donations",INCOME,4386d5c8-a5bb-45ea-99d7-a4e71645064c,,,,1,0,1,0,4120
+a62524b8-6bfd-4386-9d25-782e7f5a2b0b,4130,"Building Fund Donations",INCOME,4386d5c8-a5bb-45ea-99d7-a4e71645064c,,,,1,0,1,0,4130
+9447dc40-e0ef-478b-9b1c-d41be14de9aa,4140,"Renovation Fund Donations",INCOME,4386d5c8-a5bb-45ea-99d7-a4e71645064c,,,,1,0,1,0,4140
+62e81b15-6d1f-49f3-83ba-6337be74636c,4150,"Charity Fund Donations",INCOME,4386d5c8-a5bb-45ea-99d7-a4e71645064c,,,,1,0,1,0,4150
+3173bf15-71e9-46ce-b302-6eb9b571c957,4160,"Education Fund Donations",INCOME,4386d5c8-a5bb-45ea-99d7-a4e71645064c,,,,1,0,1,0,4160
+9edb4818-fac4-4ffe-b0d1-37b41f0ebe2d,4170,"Memorial Donations",INCOME,4386d5c8-a5bb-45ea-99d7-a4e71645064c,,,,1,0,1,0,4170
+255e68d9-c0b3-438c-b817-4677f351f6a6,4180,"Corporate Donations",INCOME,4386d5c8-a5bb-45ea-99d7-a4e71645064c,,,,1,0,1,0,4180
+3ec6cb30-86f4-41f3-9ef7-4d03ddc91d23,4190,"Anonymous Donations",INCOME,4386d5c8-a5bb-45ea-99d7-a4e71645064c,,,,1,0,1,0,4190
+a3a6b11d-dd03-40c9-a63b-6554a59e48f3,4200,"Offering Income",INCOME,,,,,1,1,1,0,4200
+9d973168-7750-41cc-b80e-dd600746b29a,4210,"Incense Offering",INCOME,a3a6b11d-dd03-40c9-a63b-6554a59e48f3,,,,1,0,1,0,4210
+9aa2ff6c-7340-40ea-a528-54c42d08669f,4220,"Merit Offering",INCOME,a3a6b11d-dd03-40c9-a63b-6554a59e48f3,,,,1,0,1,0,4220
+eacba54a-d983-4006-aa92-01b576d376ab,4230,"Prayer Offering",INCOME,a3a6b11d-dd03-40c9-a63b-6554a59e48f3,,,,1,0,1,0,4230
+67bab2ba-ccd9-47c9-9b93-e0dd7c636420,4240,"General Offering",INCOME,a3a6b11d-dd03-40c9-a63b-6554a59e48f3,,,,1,0,1,0,4240
+77c11c70-250d-4843-a1b1-896b0b6ddee5,4250,"Donation Box Offering",INCOME,a3a6b11d-dd03-40c9-a63b-6554a59e48f3,,,,1,0,1,0,4250
+0a515299-0312-4ddc-bf4e-ceb0d57f39d8,4260,"Entity Offering",INCOME,a3a6b11d-dd03-40c9-a63b-6554a59e48f3,,,,1,0,1,0,4260
+4d628d8f-fe9a-4ef3-ad96-2b5df09667be,4300,"Lamp Offering Income",INCOME,,,,,1,1,1,0,4300
+e9bfccce-5a93-4ce4-8e85-87fc2b98779b,4310,"Peace Lamp Offering",INCOME,4d628d8f-fe9a-4ef3-ad96-2b5df09667be,,,,1,0,1,0,4310
+bab625e7-7d8c-44f7-bcbc-5c445dbf2af9,4320,"Blessing Lamp Offering",INCOME,4d628d8f-fe9a-4ef3-ad96-2b5df09667be,,,,1,0,1,0,4320
+4b6eb14d-3f9e-4df7-b51c-78de52e0d102,4330,"Longevity Lamp Offering",INCOME,4d628d8f-fe9a-4ef3-ad96-2b5df09667be,,,,1,0,1,0,4330
+46e48556-94e1-4d39-ae7e-0b409c834a0a,4340,"Wisdom Lamp Offering",INCOME,4d628d8f-fe9a-4ef3-ad96-2b5df09667be,,,,1,0,1,0,4340
+c42ce15d-f92c-4061-a225-80ef18c0ae7b,4350,"Annual Lamp Offering",INCOME,4d628d8f-fe9a-4ef3-ad96-2b5df09667be,,,,1,0,1,0,4350
+25e15630-b0bf-46e6-816f-630910f73909,4400,"Religious Service Income",INCOME,,,,,1,1,1,0,4400
+9f65e2f3-eb76-4b6a-a835-b5994918b3c6,4410,"Prayer Service Income",INCOME,25e15630-b0bf-46e6-816f-630910f73909,,,,1,0,1,0,4410
+47bc241a-af1a-4e9e-ad01-81dd05bdad20,4420,"Memorial Service Income",INCOME,25e15630-b0bf-46e6-816f-630910f73909,,,,1,0,1,0,4420
+5b913fde-a7ea-47ae-ba4c-712928f696af,4430,"Memorial Ceremony Income",INCOME,25e15630-b0bf-46e6-816f-630910f73909,,,,1,0,1,0,4430
+7620c816-5ec1-4240-b03a-4c5d913557e6,4440,"Blessing Ceremony Income",INCOME,25e15630-b0bf-46e6-816f-630910f73909,,,,1,0,1,0,4440
+b2233b93-581e-4698-b0d9-fa5dfe3dba1e,4450,"Consecration Service Income",INCOME,25e15630-b0bf-46e6-816f-630910f73909,,,,1,0,1,0,4450
+34f579d9-2913-4e44-966c-4354c031d35c,4460,"Religious Ceremony Income",INCOME,25e15630-b0bf-46e6-816f-630910f73909,,,,1,0,1,0,4460
+22158f51-7ec5-42b0-a269-4ce21195e410,4500,"Ancestral Tablet Income",INCOME,,,,,1,1,1,0,4500
+6032b923-4d90-4183-92fa-5f5844e51dc7,4510,"Ancestral Tablet Installation",INCOME,22158f51-7ec5-42b0-a269-4ce21195e410,,,,1,0,1,0,4510
+01df07c5-b178-4f2a-a556-c45069c102d9,4520,"Memorial Tablet Income",INCOME,22158f51-7ec5-42b0-a269-4ce21195e410,,,,1,0,1,0,4520
+b6d6858a-c294-491e-ad14-eeec8f26ef37,4530,"Annual Tablet Offering",INCOME,22158f51-7ec5-42b0-a269-4ce21195e410,,,,1,0,1,0,4530
+ef6d68c8-01fd-457d-b7e1-62c62c6a64a2,4540,"Tablet Maintenance Offering",INCOME,22158f51-7ec5-42b0-a269-4ce21195e410,,,,1,0,1,0,4540
+44918222-f037-4842-9afb-0847dd53c6d8,4600,"Event Income",INCOME,,,,,1,1,1,0,4600
+f1b92eec-b249-47f8-b251-64690329ac30,4610,"Religious Ceremony Income",INCOME,44918222-f037-4842-9afb-0847dd53c6d8,,,,1,0,1,0,4610
+7e2c3eef-63fd-4672-81b6-ceff138a9179,4620,"Festival Income",INCOME,44918222-f037-4842-9afb-0847dd53c6d8,,,,1,0,1,0,4620
+0ffd056c-f173-449c-9284-b991cfe7a52b,4630,"Annual Festival Income",INCOME,44918222-f037-4842-9afb-0847dd53c6d8,,,,1,0,1,0,4630
+0d5a3e5c-9aeb-4812-b2ba-0a94c7e36f12,4640,"Food Offering Income",INCOME,44918222-f037-4842-9afb-0847dd53c6d8,,,,1,0,1,0,4640
+9f28e564-25a0-4d29-81ba-66dc952a434f,4650,"Event Registration Income",INCOME,44918222-f037-4842-9afb-0847dd53c6d8,,,,1,0,1,0,4650
+ffd8ef21-4e4f-46f1-baa5-fbbcfe4dc78e,4700,"Religious Item Sales",INCOME,,,,,1,1,1,0,4700
+da6ec384-1f99-480f-b46f-97134ae135e5,4710,"Incense Sales",INCOME,ffd8ef21-4e4f-46f1-baa5-fbbcfe4dc78e,,,,1,0,1,0,4710
+615b6f3f-ffee-4730-a5f2-15bd9c4ec236,4720,"Candle Sales",INCOME,ffd8ef21-4e4f-46f1-baa5-fbbcfe4dc78e,,,,1,0,1,0,4720
+2910db92-63eb-40ce-ae95-6b7f690505bc,4730,"Joss Paper Sales",INCOME,ffd8ef21-4e4f-46f1-baa5-fbbcfe4dc78e,,,,1,0,1,0,4730
+47c8e2c1-c1bf-4e69-a7fa-b36295c47f5e,4740,"Religious Book Sales",INCOME,ffd8ef21-4e4f-46f1-baa5-fbbcfe4dc78e,,,,1,0,1,0,4740
+87c7eb94-45ee-45d3-8e59-11a1c1da2251,4750,"Souvenir Sales",INCOME,ffd8ef21-4e4f-46f1-baa5-fbbcfe4dc78e,,,,1,0,1,0,4750
+b7af499c-4b88-4e02-925d-5a08b45c3789,4800,"Rental Income",INCOME,,,,,1,1,1,0,4800
+1c7a9502-f897-4b0a-8547-f3b900859a07,4810,"Hall Rental Income",INCOME,b7af499c-4b88-4e02-925d-5a08b45c3789,,,,1,0,1,0,4810
+133a379e-e2ce-41d8-a051-710a0ed90b26,4820,"Premises Rental Income",INCOME,b7af499c-4b88-4e02-925d-5a08b45c3789,,,,1,0,1,0,4820
+6492694b-1752-4717-933a-226e70a93f52,4900,"Bank Interest Income",INCOME,,,,,1,0,1,1,4900
+9f0ed7c0-62b4-4200-92d4-596428df5144,4900,"Bank Interest Income",INCOME,,,,,1,0,1,1,4900
+ee439541-fdf0-4abc-af91-f8f8bc22426e,4900,"Other Income",INCOME,,,,,1,1,1,0,4900
+fcf819bd-dbd3-41d6-97c7-2be5a9f3141d,4910,"Interest Income",INCOME,ee439541-fdf0-4abc-af91-f8f8bc22426e,,,,1,0,1,0,4910
+8e8982a0-f8d7-4ea0-b862-f4becf16fb03,4920,"Bank Interest Income",INCOME,ee439541-fdf0-4abc-af91-f8f8bc22426e,,,,1,0,1,0,4920
+82bba104-27e1-4cd3-9a59-ff003306c62d,4930,"Miscellaneous Income",INCOME,ee439541-fdf0-4abc-af91-f8f8bc22426e,,,,1,0,1,0,4930
+3e14967d-e682-4515-8c3e-b614b4c5e5c6,4940,"Grant Income",INCOME,ee439541-fdf0-4abc-af91-f8f8bc22426e,,,,1,0,1,0,4940
+61117442-c4f7-449b-a358-8532aaa06882,4950,"Investment Income",INCOME,ee439541-fdf0-4abc-af91-f8f8bc22426e,,,,1,0,1,0,4950
+072be928-e453-48c4-8494-c5fc043fdfe3,4999,"Uncategorised Income",INCOME,,,,,1,0,1,1,4999
+506b6057-c8ea-4c06-a83f-96ba4e9847f8,4999,"Uncategorised Income",INCOME,,,,,1,0,1,1,4999
+a9786288-fa7a-46f5-bd80-045f15a4f323,5100,"Incense and Religious Supplies",EXPENSE,,,,,1,1,1,0,5100
+8b099066-8ef1-4018-bb25-9c58f0c6d6a4,5110,"Incense Expense",EXPENSE,a9786288-fa7a-46f5-bd80-045f15a4f323,,,,1,0,1,0,5110
+c0d32f35-7d45-4ca7-9fe7-eae5c208d81c,5120,"Candle Expense",EXPENSE,a9786288-fa7a-46f5-bd80-045f15a4f323,,,,1,0,1,0,5120
+75afa0e5-ce00-4660-858f-99a82405ae60,5130,"Joss Paper Expense",EXPENSE,a9786288-fa7a-46f5-bd80-045f15a4f323,,,,1,0,1,0,5130
+8cfb9c6c-5639-4a12-8fdc-159ba4cf1b87,5140,"Oil Offering Expense",EXPENSE,a9786288-fa7a-46f5-bd80-045f15a4f323,,,,1,0,1,0,5140
+7eab8b31-3d60-48a0-a99d-128845bb8e27,5150,"Religious Items Expense",EXPENSE,a9786288-fa7a-46f5-bd80-045f15a4f323,,,,1,0,1,0,5150
+20c65520-46ad-4930-b82e-ac89faf9ded8,5160,"Flowers Expense",EXPENSE,a9786288-fa7a-46f5-bd80-045f15a4f323,,,,1,0,1,0,5160
+bafe143c-49b1-42fc-af10-2a4b0daa705b,5170,"Fruits and Offerings",EXPENSE,a9786288-fa7a-46f5-bd80-045f15a4f323,,,,1,0,1,0,5170
+7091b7d7-16fc-471b-b4df-a3ab3fc244ed,5180,"Religious Books Expense",EXPENSE,a9786288-fa7a-46f5-bd80-045f15a4f323,,,,1,0,1,0,5180
+df15237c-3057-45c9-8eb5-722b21f06982,5200,"Religious Ceremony Expenses",EXPENSE,,,,,1,1,1,0,5200
+fa384bcd-6891-483e-a0ef-b90d201e36fd,5210,"Priest / Monk Fees",EXPENSE,df15237c-3057-45c9-8eb5-722b21f06982,,,,1,0,1,0,5210
+9f33a34b-5deb-4ac1-9a18-0aaab7c87fcc,5220,"Taoist Priest Fees",EXPENSE,df15237c-3057-45c9-8eb5-722b21f06982,,,,1,0,1,0,5220
+73357cfc-2ae6-4a98-b5bd-9cd53dab3f50,5230,"Ceremony Materials",EXPENSE,df15237c-3057-45c9-8eb5-722b21f06982,,,,1,0,1,0,5230
+d8508182-6945-440a-ad26-5a266abc5224,5240,"Ceremony Decoration",EXPENSE,df15237c-3057-45c9-8eb5-722b21f06982,,,,1,0,1,0,5240
+c8075c0e-410d-4c68-950b-d2ce44fe7d8d,5250,"Ceremony Sound System",EXPENSE,df15237c-3057-45c9-8eb5-722b21f06982,,,,1,0,1,0,5250
+3dc8b329-acdd-4526-808e-82ea57d90385,5260,"Ceremony Lighting",EXPENSE,df15237c-3057-45c9-8eb5-722b21f06982,,,,1,0,1,0,5260
+fd196f26-b6bb-42a3-be98-c913ea3bb68d,5270,"Ceremony Catering",EXPENSE,df15237c-3057-45c9-8eb5-722b21f06982,,,,1,0,1,0,5270
+a5f54618-d123-4e18-9848-9378501e37c2,5280,"Ceremony Transportation",EXPENSE,df15237c-3057-45c9-8eb5-722b21f06982,,,,1,0,1,0,5280
+c27d114b-9f72-46e1-ac3f-643318c34538,5290,"Other Ceremony Expenses",EXPENSE,df15237c-3057-45c9-8eb5-722b21f06982,,,,1,0,1,0,5290
+92f05200-78dd-4ab5-b5ce-2bac5435109a,5300,"Entity Maintenance",EXPENSE,,,,,1,1,1,0,5300
+846895e8-2c60-44bc-b347-b606f29e2ba9,5310,"Building Maintenance",EXPENSE,92f05200-78dd-4ab5-b5ce-2bac5435109a,,,,1,0,1,0,5310
+f7280ebf-3396-4189-bc9e-e6acc5563d1e,5320,"Electrical Maintenance",EXPENSE,92f05200-78dd-4ab5-b5ce-2bac5435109a,,,,1,0,1,0,5320
+dee7dbf7-4d81-4e73-b90f-5e91f13f395a,5330,"Plumbing Maintenance",EXPENSE,92f05200-78dd-4ab5-b5ce-2bac5435109a,,,,1,0,1,0,5330
+3dd7272a-6b8a-4f30-8313-64e876b54754,5340,"Roof Maintenance",EXPENSE,92f05200-78dd-4ab5-b5ce-2bac5435109a,,,,1,0,1,0,5340
+ee176806-a5b0-4d2f-82d0-c619a7fcc0f3,5350,"Painting and Decoration",EXPENSE,92f05200-78dd-4ab5-b5ce-2bac5435109a,,,,1,0,1,0,5350
+e5bdc81e-b334-4fd5-97ef-9c330e16a986,5360,"Religious Facility Maintenance",EXPENSE,92f05200-78dd-4ab5-b5ce-2bac5435109a,,,,1,0,1,0,5360
+79f98008-e7d9-47c4-b033-5a7b44ca79ae,5370,"Statue Maintenance",EXPENSE,92f05200-78dd-4ab5-b5ce-2bac5435109a,,,,1,0,1,0,5370
+eb59f2d5-098e-4e45-a2c8-39d3cccdd4cd,5380,"Entity Cleaning",EXPENSE,92f05200-78dd-4ab5-b5ce-2bac5435109a,,,,1,0,1,0,5380
+e4056f76-979a-4538-864f-7d0d7c63947e,5390,"General Repairs",EXPENSE,92f05200-78dd-4ab5-b5ce-2bac5435109a,,,,1,0,1,0,5390
+1de8459e-424f-43c5-988f-c95c07cecbff,5400,Utilities,EXPENSE,,,,,1,1,1,0,5400
+b1af0739-660a-446a-803c-e67825bbf604,5410,Electricity,EXPENSE,1de8459e-424f-43c5-988f-c95c07cecbff,,,,1,0,1,0,5410
+078a7343-dd7b-4ce2-96db-d9bd9ccdae8a,5420,Water,EXPENSE,1de8459e-424f-43c5-988f-c95c07cecbff,,,,1,0,1,0,5420
+775f1f73-14cf-4a14-92b7-7e767c371ad3,5430,Telephone,EXPENSE,1de8459e-424f-43c5-988f-c95c07cecbff,,,,1,0,1,0,5430
+b06a7dbd-f1cb-4c30-b74c-eec37d1cc962,5440,Internet,EXPENSE,1de8459e-424f-43c5-988f-c95c07cecbff,,,,1,0,1,0,5440
+bcf5df0b-42fe-413a-9623-130339b7b1d5,5450,"Waste Disposal",EXPENSE,1de8459e-424f-43c5-988f-c95c07cecbff,,,,1,0,1,0,5450
+0ecf328e-ca8c-4a67-a729-090e41253d55,5460,"Security Services",EXPENSE,1de8459e-424f-43c5-988f-c95c07cecbff,,,,1,0,1,0,5460
+19ee5941-8e2a-41cc-8d65-5b74876543fa,5500,"Staff Costs",EXPENSE,,,,,1,1,1,0,5500
+830b2476-7f69-4a02-98df-fcbc6b0c1a7c,5510,"Salaries and Wages",EXPENSE,19ee5941-8e2a-41cc-8d65-5b74876543fa,,,,1,0,1,0,5510
+8d150921-b2df-4dae-9532-15ed53ae5f23,5520,"Staff Allowances",EXPENSE,19ee5941-8e2a-41cc-8d65-5b74876543fa,,,,1,0,1,0,5520
+c87ab842-25d1-4f5b-8032-b10a907d59b8,5530,"Staff Overtime",EXPENSE,19ee5941-8e2a-41cc-8d65-5b74876543fa,,,,1,0,1,0,5530
+307c7309-b759-448c-9006-4572530f8e84,5540,"Staff Benefits",EXPENSE,19ee5941-8e2a-41cc-8d65-5b74876543fa,,,,1,0,1,0,5540
+33852ae8-7a55-43df-896e-a2839df20cce,5550,"Staff Training",EXPENSE,19ee5941-8e2a-41cc-8d65-5b74876543fa,,,,1,0,1,0,5550
+ba621f43-9959-4ea3-b85d-8b7dcee10d02,5560,"Staff Meals",EXPENSE,19ee5941-8e2a-41cc-8d65-5b74876543fa,,,,1,0,1,0,5560
+08fe6e9a-9f86-48ca-9bd1-a74cc8e7b169,5570,"Staff Medical",EXPENSE,19ee5941-8e2a-41cc-8d65-5b74876543fa,,,,1,0,1,0,5570
+fe00d771-cd45-417d-a92c-45280dccf79a,5600,"Administrative Expenses",EXPENSE,,,,,1,1,1,0,5600
+264d419d-6a28-42bb-a3ea-3f5b970d7197,5610,Stationery,EXPENSE,fe00d771-cd45-417d-a92c-45280dccf79a,,,,1,0,1,0,5610
+f27767af-1b10-4553-9660-afc704bcdab6,5620,Printing,EXPENSE,fe00d771-cd45-417d-a92c-45280dccf79a,,,,1,0,1,0,5620
+4475157f-0e31-4616-80a7-32a43db04181,5630,"Postage and Courier",EXPENSE,fe00d771-cd45-417d-a92c-45280dccf79a,,,,1,0,1,0,5630
+07f306e2-f582-41ef-a92f-c8259ab53e8e,5640,"Telephone and Communication",EXPENSE,fe00d771-cd45-417d-a92c-45280dccf79a,,,,1,0,1,0,5640
+3d8869a6-13dd-4acb-a3e9-3417addaaa13,5650,"Software Subscription",EXPENSE,fe00d771-cd45-417d-a92c-45280dccf79a,,,,1,0,1,0,5650
+fb4d6809-c6c5-44ee-ae4f-d3a2841eda4f,5660,"IT Services",EXPENSE,fe00d771-cd45-417d-a92c-45280dccf79a,,,,1,0,1,0,5660
+7e898e20-98c5-4044-853d-517b9fb399d6,5670,"Accounting Fees",EXPENSE,fe00d771-cd45-417d-a92c-45280dccf79a,,,,1,0,1,0,5670
+66dcb06f-0333-4711-b825-547cf8974723,5680,"Audit Fees",EXPENSE,fe00d771-cd45-417d-a92c-45280dccf79a,,,,1,0,1,0,5680
+f9717a16-b4a9-42b5-bcc1-f2460ed8a0fb,5690,"Legal and Professional Fees",EXPENSE,fe00d771-cd45-417d-a92c-45280dccf79a,,,,1,0,1,0,5690
+fe33d605-d786-41b2-b358-6c49835f1966,5700,"Banking and Finance Costs",EXPENSE,,,,,1,1,1,0,5700
+eb162eea-3717-4a38-bebf-ad672f0ff2f5,5710,"Bank Charges",EXPENSE,fe33d605-d786-41b2-b358-6c49835f1966,,,,1,0,1,0,5710
+97f68091-f325-4f5f-8466-bb6be4b9dae2,5720,"Payment Gateway Charges",EXPENSE,fe33d605-d786-41b2-b358-6c49835f1966,,,,1,0,1,0,5720
+fefd14b6-ee9c-4b0b-a0e0-19b5c2c0084d,5730,"Merchant Charges",EXPENSE,fe33d605-d786-41b2-b358-6c49835f1966,,,,1,0,1,0,5730
+8365aea8-3449-4b17-86a0-8ec77892c0df,5740,"Interest Expense",EXPENSE,fe33d605-d786-41b2-b358-6c49835f1966,,,,1,0,1,0,5740
+6b8d0e4f-8fc2-4932-a38d-dd9a5fb0ff9c,5800,"Charity and Welfare",EXPENSE,,,,,1,1,1,0,5800
+008a4435-c7db-4310-bd6c-df16380598a0,5810,"Cash Charity",EXPENSE,6b8d0e4f-8fc2-4932-a38d-dd9a5fb0ff9c,,,,1,0,1,0,5810
+b87d3cc1-1457-48c0-8cfe-bbe44888f1fc,5820,"Food Distribution",EXPENSE,6b8d0e4f-8fc2-4932-a38d-dd9a5fb0ff9c,,,,1,0,1,0,5820
+440fd7f2-98a3-4366-a582-40a5edb30dbd,5830,"Medical Assistance",EXPENSE,6b8d0e4f-8fc2-4932-a38d-dd9a5fb0ff9c,,,,1,0,1,0,5830
+25a0953d-547c-4e5c-864d-2762d80b0f07,5840,"Education Assistance",EXPENSE,6b8d0e4f-8fc2-4932-a38d-dd9a5fb0ff9c,,,,1,0,1,0,5840
+6c3b0146-8e50-4724-809f-9a680a213ec1,5850,"Emergency Relief",EXPENSE,6b8d0e4f-8fc2-4932-a38d-dd9a5fb0ff9c,,,,1,0,1,0,5850
+85df4cc5-c563-402a-ae5a-d102acaf8ae6,5860,"Community Assistance",EXPENSE,6b8d0e4f-8fc2-4932-a38d-dd9a5fb0ff9c,,,,1,0,1,0,5860
+f6e69211-38ee-43d5-8ecb-343274c52bb6,5870,"Donation to Other Charities",EXPENSE,6b8d0e4f-8fc2-4932-a38d-dd9a5fb0ff9c,,,,1,0,1,0,5870
+00ee084e-d644-4454-b8e4-dbdcdb8198e5,5900,"Depreciation Expense",EXPENSE,,,,,1,0,1,1,5900
+9a7f9eec-d5a9-468b-8fdd-a07445e375ba,5900,"Depreciation Expense",EXPENSE,,,,,1,0,1,1,5900
+ee070af4-4a42-4833-b3ff-8c3b547bb711,5900,"Fundraising Expenses",EXPENSE,,,,,1,1,1,0,5900
+68eee5fe-d53a-4a76-9e48-bf09ffb03acc,5901,"Gain/Loss on Disposal of Assets",EXPENSE,,,,,1,0,1,1,5901
+8250fac6-208b-4645-b50c-ac055d38bf59,5901,"Gain/Loss on Disposal of Assets",EXPENSE,,,,,1,0,1,1,5901
+99bd8eb1-48aa-4432-be48-d9619adc3662,5902,"Bank Charges",EXPENSE,,,,,1,0,1,1,5902
+9e6dd8c2-3046-4380-9f15-1e30921c858b,5902,"Bank Charges",EXPENSE,,,,,1,0,1,1,5902
+3ae8d6cd-96cd-456e-87c8-574e106fa0c6,5910,"Fundraising Event Expenses",EXPENSE,ee070af4-4a42-4833-b3ff-8c3b547bb711,,,,1,0,1,0,5910
+333195ef-700d-4625-a38e-aad4a40eb7a7,5920,Advertising,EXPENSE,ee070af4-4a42-4833-b3ff-8c3b547bb711,,,,1,0,1,0,5920
+41cb11ad-796f-4c8e-a2d7-3805a45db3ad,5930,"Printing and Promotion",EXPENSE,ee070af4-4a42-4833-b3ff-8c3b547bb711,,,,1,0,1,0,5930
+4dcbcc45-3eba-40b6-8cca-5a0e7dcda1c9,5940,"Website Expenses",EXPENSE,ee070af4-4a42-4833-b3ff-8c3b547bb711,,,,1,0,1,0,5940
+9dee594a-05f2-48e4-9b04-4a958481da78,5950,"Social Media Promotion",EXPENSE,ee070af4-4a42-4833-b3ff-8c3b547bb711,,,,1,0,1,0,5950
+458d378f-a8b2-46e8-b852-2a76c3feb29d,5960,"Public Relations",EXPENSE,ee070af4-4a42-4833-b3ff-8c3b547bb711,,,,1,0,1,0,5960
+59d3324c-a2c6-46c6-b6a7-e81e42c61efe,5999,"Uncategorised Expense",EXPENSE,,,,,1,0,1,1,5999
+714dc7c4-e22d-4bb6-b110-ab0907b8cda8,5999,"Uncategorised Expense",EXPENSE,,,,,1,0,1,1,5999
+71c78063-9ee3-42f2-82bf-140f180ac216,5999,"Uncategorised Expense",EXPENSE,,,,,1,0,1,1,5999
+f6c611c7-9680-4aa5-bfac-675dd1ae8f6b,5999,"Uncategorised Expense",EXPENSE,,,,,1,0,1,1,5999
+ef6070c3-5122-452c-84e8-024210a57441,6100,"Depreciation Expense",EXPENSE,,,,,1,1,1,0,6100
+f6611ee4-46da-43ad-b5ee-c1426d50e28e,6110,"Building Depreciation",EXPENSE,ef6070c3-5122-452c-84e8-024210a57441,,,,1,0,1,0,6110
+fa4a2db8-b3a4-42ad-9ca2-efd992ab6984,6120,"Equipment Depreciation",EXPENSE,ef6070c3-5122-452c-84e8-024210a57441,,,,1,0,1,0,6120
+01ab0bcd-b6f5-44b8-baf7-d12358899be3,6130,"Furniture Depreciation",EXPENSE,ef6070c3-5122-452c-84e8-024210a57441,,,,1,0,1,0,6130
+e6a5a74f-c868-4800-8194-fe3d1d96b7df,6140,"Vehicle Depreciation",EXPENSE,ef6070c3-5122-452c-84e8-024210a57441,,,,1,0,1,0,6140
+a6da8f1f-db60-4482-9fe2-f5643057dd85,6200,"Insurance Expense",EXPENSE,,,,,1,1,1,0,6200
+4acd1bc3-f1f4-47ab-ba38-707e5ef1c6b3,6210,"Building Insurance",EXPENSE,a6da8f1f-db60-4482-9fe2-f5643057dd85,,,,1,0,1,0,6210
+5043ec37-a3ce-48c7-a14d-6cb775e160c8,6220,"Public Liability Insurance",EXPENSE,a6da8f1f-db60-4482-9fe2-f5643057dd85,,,,1,0,1,0,6220
+0a899737-e16e-425f-90b4-83b131f1869d,6230,"Vehicle Insurance",EXPENSE,a6da8f1f-db60-4482-9fe2-f5643057dd85,,,,1,0,1,0,6230
+ad83b59a-19ac-41a8-bddc-244c20897f0c,6300,"Security Expense",EXPENSE,,,,,1,0,1,0,6300
+8179ac55-6cc2-42f9-959c-32b55e77e985,6400,"Vehicle Expenses",EXPENSE,,,,,1,1,1,0,6400
+3428efbc-de2e-4780-910d-870e79b149b1,6410,Fuel,EXPENSE,8179ac55-6cc2-42f9-959c-32b55e77e985,,,,1,0,1,0,6410
+cec19428-5027-4890-b6e1-aa0ef613ed1c,6420,"Vehicle Maintenance",EXPENSE,8179ac55-6cc2-42f9-959c-32b55e77e985,,,,1,0,1,0,6420
+f6e1f7f7-182a-4196-8a6d-7238dba56c21,6430,"Road Tax and Registration",EXPENSE,8179ac55-6cc2-42f9-959c-32b55e77e985,,,,1,0,1,0,6430
+675d15a4-7dfb-41f0-a364-76dcc28695a2,6500,"Miscellaneous Expenses",EXPENSE,,,,,1,0,1,0,6500

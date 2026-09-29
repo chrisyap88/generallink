@@ -1,0 +1,53 @@
+<?php
+
+return [
+    // admin-new-registration
+    'new_agent_registration_title' => '🔔 New Agent Registration',
+    'admin_notification_subtitle' => 'GeneralLink Digital Ecosystem — Admin Notification',
+    'personal_details_heading' => 'Personal Details',
+    'nric_mykad_label' => 'NRIC / MyKad',
+    'email_address_label' => 'Email Address',
+    'mobile_phone_label' => 'Mobile Phone',
+    'full_address_label' => 'Full Address',
+    'bank_details_heading' => 'Bank Details',
+    'bank_account_label' => 'Bank Account',
+    'upline_registration_info_heading' => 'Upline & Registration Info',
+    'upline_type_label' => 'Upline Type',
+    'upline_name_label' => 'Upline Name',
+    'upline_code_label' => 'Upline Code',
+    'role_assigned_label' => 'Role Assigned',
+    'submitted_at_label' => 'Submitted At',
+    'pending_admin_assignment' => 'PENDING ADMIN ASSIGNMENT',
+    'action_required_note_template' => '⚠ <strong>Action Required:</strong> This agent registered without a referral link. Please assign them to a :role in the admin dashboard.',
+    'footer_tagline' => 'GeneralLink Digital Ecosystem · AI-Powered · Malaysia · Southeast Asia',
+    'automated_notification_note' => 'This is an automated notification. Please do not reply.',
+
+    // agent-assigned
+    'account_assignment_confirmed_title' => '🎉 Account Assignment Confirmed!',
+    'dear_greeting_template' => 'Dear <strong>:name</strong>,',
+    'account_assigned_note_template' => 'Your GeneralLink account has been assigned to a :role. You are now fully connected to the GeneralLink network!',
+    'your_name_label' => 'Your Name',
+    'your_affiliate_code_label' => 'Your Affiliate Code',
+    'generating_placeholder' => 'Generating...',
+    'assigned_role_template' => 'Assigned :role',
+    'role_affiliate_code_template' => ':role Affiliate Code',
+    'assignment_date_label' => 'Assignment Date',
+    'login_dashboard_note' => 'You can now login to your GeneralLink dashboard and start your journey!',
+    'login_to_dashboard_button' => 'Login to Dashboard →',
+
+    // agent-verification
+    'verify_email_page_title' => 'Verify Your Email — GeneralLink',
+    'brand_name_header' => 'GENERAL LINK',
+    'brand_tagline' => 'DIGITAL AFFILIATE ECOSYSTEM',
+    'welcome_heading' => 'Welcome to GeneralLink! 🎉',
+    'registering_thanks_note' => 'Thank you for registering as an affiliate agent with <strong>GeneralLink Digital Ecosystem</strong> — Malaysia\'s premier digital insurance affiliate platform.',
+    'verify_activate_note' => 'Please verify your email address to activate your account and create your password.',
+    'verify_button_label' => '✅ VERIFY MY EMAIL ADDRESS',
+    'what_happens_after_heading' => '📋 What happens after verification:',
+    'what_happens_after_steps' => '1️⃣ Click the button above to verify your email<br>2️⃣ You will be redirected to create your password<br>3️⃣ Set a strong password for your account<br>4️⃣ Login and start your GeneralLink journey!',
+    'button_not_working_note' => 'If the button above does not work, copy and paste this link into your browser:',
+    'security_notice_template' => '⚠️ <strong>Security Notice:</strong> This link expires in <strong>24 hours</strong>. If you did not register, please ignore this email.',
+    'footer_brand' => 'GeneralLink Digital Ecosystem',
+    'footer_tagline_caps' => 'AI-POWERED · MALAYSIA · SOUTHEAST ASIA',
+    'automated_email_note' => 'This is an automated email. Please do not reply.',
+];
