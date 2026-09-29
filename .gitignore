@@ -24,3 +24,8 @@ Homestead.yaml
 Thumbs.db
 "up Folder/GOOGLE STUDIO api KEY projects478.txt" 
 "*api*.txt" 
+Setup Folder/claud-api-key.txtClaude-API-Key.txt
+"Generallink API Key Setup Folder/"
+_claude_tmp/
+storage/framework/sessions/
+storage/framework/views/
