@@ -22,10 +22,27 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
-"up Folder/GOOGLE STUDIO api KEY projects478.txt" 
-"*api*.txt" 
-Setup Folder/claud-api-key.txtClaude-API-Key.txt
-"Generallink API Key Setup Folder/"
+Generallink API Key Setup Folder/
+*api*.txt
+Setup Folder/claud-api-key.txt
+Claude-API-Key.txt
 _claude_tmp/
 storage/framework/sessions/
 storage/framework/views/
+
+# --- Secrets & private files (added 29 Sep 2026, per Chris security rules) ---
+.env.*
+!.env.example
+*.key
+*api-key*.txt
+*apikey*.txt
+*api_key*.txt
+*password*.txt
+*secret*.txt
+
+# Database dumps contain members' personal data (PDPA) — Google Drive backs them up, never Git
+db-backups/
+*.sql
+
+# deploy staging copies
+deploy_*/
